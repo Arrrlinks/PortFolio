@@ -5,9 +5,9 @@
 /*=============== VARIABLES ===============*/
 
 :root {
-    --accent-color: #a8858f;
-    --background-color: #302729;
-    --background-color-2: #362b2e;
+    --accent-color: #217790;
+    --background-color: #014f7b;
+    --background-color-2: #005986;
     --light-grey: rgb(194, 194, 194);
     --border-radius: 30px;
 }
@@ -165,7 +165,7 @@ h2 {
 
 .header .cta {
     color: #fff;
-    background-color: rgba(255, 255, 255, 0.274);
+    background-color: rgba(255, 255, 255, 0.2);
     padding: 10px 20px;
     margin: 50px 0;
     border-radius: 30px;
@@ -188,8 +188,10 @@ h2 {
     background: white;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     scroll-behavior: smooth;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .content-card {
@@ -244,16 +246,12 @@ h2 {
     background: var(--accent-color);
 }
 
-.polish {
+.french {
     width: 100%;
 }
 
 .english {
-    width: 75%;
-}
-
-.french {
-    width: 50%;
+    width: 80%;
 }
 
 .skill {
@@ -294,7 +292,7 @@ h2 {
 }
 
 .overlay {
-    background: #a8858fe0;
+    background: #217790e0;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -436,6 +434,42 @@ textarea {
     cursor: pointer;
 }
 
+.cursor {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 2px;
+    height: 1.3em;
+    margin-left: 5px;
+    background-color: black;
+    animation: blink 1s infinite;
+}
+
+.changeLanguage{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin:10px;
+    right: 0;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    49% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 /*=============== MEDIA QUERY ===============*/
 
 @media screen and (max-width: 1200px) {
@@ -480,7 +514,8 @@ textarea {
     }
 
     ::-webkit-scrollbar {
-        width: 8px;
+        width: 0.5em;
+        display: none;
     }
 
     ::-webkit-scrollbar-track {
@@ -489,7 +524,7 @@ textarea {
 
     ::-webkit-scrollbar-thumb {
         background: #fff;
-        border-radius: 10px;
+        border-radius: 1em;
     }
 }
 
@@ -517,10 +552,6 @@ textarea {
         }
     }
 
-    /* A little cheat to trick the freecodecamp certification test. It requires
-    the navbar to be on top of the viewport, but I've already done that in previous
-    projects and I think in this one it looks more interesting on the side.
-    I hope the freecodecamp team won't be mad at me :) */
     #navbar {
         position: fixed;
         margin: 0;
