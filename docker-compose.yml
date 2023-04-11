@@ -4,6 +4,6 @@ services:
   web:
     build: .
     ports:
-      - "443:80"
+      - "3333:80"
     volumes:
       - ./www:/var/www/html
