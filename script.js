@@ -2,7 +2,7 @@ const welcomeName = document.getElementById('welcome-name');
 const lang = document.documentElement.lang
 let words = ['Antoine', 'looking for an internship', 'motivated', 'a student at CESI'];
 if (lang === 'fr') {
-     words = ['Antoine', 'à la recherche d\'un stage', 'motivé', 'étudiant à CESI'];
+    words = ['Antoine', 'à la recherche d\'un stage', 'motivé', 'étudiant à CESI'];
 }
 let wordIndex = 0;
 let i = words[wordIndex].length;
@@ -30,12 +30,22 @@ function type() {
         speed = 100;
         delay = 2000;
     }
-    if (i === currentWord.length+1) {
+    if (i === currentWord.length + 1) {
         setTimeout(type, delay);
-    }
-    else {
+    } else {
         setTimeout(type, speed);
     }
 }
 
 setTimeout(type, delay);
+
+
+const form = document.getElementById('form');
+const submitButton = document.getElementById('submit');
+form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Empêche l'action de formulaire par défaut
+
+    const subject = encodeURIComponent(document.getElementById('subject').value);
+    const body = encodeURIComponent(document.getElementById('body').value);
+    window.location.href = 'mailto:antoine.faure@viacesi.fr?subject=' + subject + '&body=' + body; // Ouvre le client de messagerie avec les données formatées
+});
