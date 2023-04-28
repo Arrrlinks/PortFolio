@@ -1,8 +1,8 @@
 const welcomeName = document.getElementById('welcome-name');
 const lang = document.documentElement.lang
-let words = ['Antoine', 'looking for an internship', 'motivated', 'a student at CESI'];
+let words = ['Antoine',/* 'looking for an internship',*/ 'motivated', 'a student at CESI'];
 if (lang === 'fr') {
-    words = ['Antoine', 'à la recherche d\'un stage', 'motivé', 'étudiant à CESI'];
+    words = ['Antoine', /*'à la recherche d\'un stage',*/ 'motivé', 'étudiant à CESI'];
 }
 let wordIndex = 0;
 let i = words[wordIndex].length;
