@@ -1,14 +1,11 @@
 <!doctype html>
 <html lang="fr">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font Awesome CDN  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
           integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
           crossorigin="anonymous"/>
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <title>Antoine FAURE</title>
 </head>
@@ -20,8 +17,6 @@
 </div>
 
 <div class="container">
-    <!--=============== NAVIGATION MENU ===============-->
-
     <div class="menu">
         <a href="#welcome-section" class="menu-icon fas fa-home"></a>
         <a href="#about" class="menu-icon fas fa-user"></a>
@@ -30,10 +25,7 @@
         <a href="#contact" class="menu-icon fas fa-envelope"></a>
     </div>
 
-    <!--=============== MAIN "WINDOW" ===============-->
-
     <div class="portfolio">
-        <!--=============== HEADER SECTION ===============-->
 
         <section class="header">
             <img class="header-img"
@@ -50,17 +42,12 @@
             <a href="cv/CV Antoine FAURE.pdf" class="cta" download>Télécharger mon CV</a>
         </section>
 
-        <!--=============== CONTENT SECTION ===============-->
-
         <div class="content">
-            <!--=============== HOME ===============-->
 
             <section class="content-card home" id="welcome-section">
                 <h1>Bonjour, je suis <span id="welcome-name">Antoine</span><span class="cursor"></span></h1>
             </section>
 
-
-            <!--=============== ABOUT ME ===============-->
 
             <section class="content-card about" id="about">
                 <h1>À propos de moi</h1>
@@ -109,21 +96,18 @@
                             <span class="bar"><span class="french"></span></span>
                         </div>
                         <div class="language">
-                            <p>Anglais
-                            <div class="infobulle"></div>
-                            </p>
+                            <p>Anglais</p>
                             <span class="bar"><span class="english"></span></span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!--=============== PROJECTS ===============-->
-
             <section class="content-card projects" id="projects">
                 <h1>Mes Projets</h1>
                 <div class="col-2 project-list">
-                    <div class="project-tile" onclick="window.open('http://task.antoinef.fr', '_blank');">
+
+                    <div class="project-tile" onclick="window.open('https://task.antoinef.fr', '_blank');">
                         <img src="img/TasK.png"
                              alt=""/>
                         <div class="overlay">
@@ -135,6 +119,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="project-tile"
                          onclick="window.open('https://github.com/Arrrlinks/Web-Project', '_blank');">
                         <img src="img/CesiEnFait.png"
@@ -149,7 +134,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-tile" onclick="window.open('https://statifyfm.netlify.app', '_blank');">
+
+                    <!--div class="project-tile" onclick="window.open('https://statifyfm.netlify.app', '_blank');">
                         <img src="img/Statifyfm.png"
                              alt=""/>
                         <div class="overlay">
@@ -161,7 +147,22 @@
                                 </p>
                             </div>
                         </div>
+                    </div-->
+
+                    <div class="project-tile"
+                         onclick="window.open('https://todo-list-flutter-a0f23.web.app/#/', '_blank');">
+                        <img src="img/ToDoApp.png"
+                             alt=""/>
+                        <div class="overlay">
+                            <div class="project-description">
+                                <h3>To Do App Flutter</h3>
+                                <p>
+                                    Projet de formation au langage Flutter ainsi qu'à l'utilisation de Firebase.
+                                </p>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="project-tile"
                          onclick="window.open('https://github.com/raphaeldenni/Projet-OOP', '_blank');">
                         <img src="img/DeltaStorage.png"
@@ -179,8 +180,6 @@
                 </div>
                 <a href="https://github.com/arrrlinks">voir plus...</a>
             </section>
-
-            <!--=============== EXPERIENCE ===============-->
 
             <section class="content-card experience" id="experience">
                 <h1>Formation</h1>
@@ -214,16 +213,16 @@
                 </div>
             </section>
 
-            <!--=============== CONTACT ===============-->
-
             <section class="content-card contact" id="contact">
                 <h1>Contactez Moi</h1>
                 <form class="form" id="form">
                     <div class="input-box">
+                        <label for="subject"></label>
                         <input type="text" class="text-input" name="subject" id="subject"
-                               placeholder="Objet"/>
+                                                            placeholder="Objet"/>
                     </div>
                     <div class="input-box">
+                        <label for="body"></label>
                         <textarea class="message" name="body" id="body" placeholder="Message"></textarea>
                     </div>
                     <div class="input-box">

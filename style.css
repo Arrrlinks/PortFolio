@@ -1,8 +1,4 @@
-/*=============== GOOGLE FONTS ===============*/
-
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
-/*=============== VARIABLES ===============*/
 
 :root {
     --accent-color: #217790;
@@ -11,8 +7,6 @@
     --light-grey: rgb(194, 194, 194);
     --border-radius: 30px;
 }
-
-/*=============== SCROLLBAR ===============*/
 
 ::-webkit-scrollbar {
     width: 8px;
@@ -30,8 +24,6 @@
 .content:hover::-webkit-scrollbar-thumb {
     background: var(--light-grey);
 }
-
-/*=============== BASE ===============*/
 
 * {
     padding: 0;
@@ -78,7 +70,34 @@ h2 {
     height: 100vh;
 }
 
-/*=============== MENU ===============*/
+.cursor {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 2px;
+    height: 1.3em;
+    margin-left: 5px;
+    background-color: black;
+    animation: blink 1s infinite;
+}
+
+.changeLanguage{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    margin:10px;
+    right: 0;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.changeLanguage img{
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
 
 .menu {
     display: flex;
@@ -104,8 +123,6 @@ h2 {
     color: var(--accent-color);
 }
 
-/*=============== PORTFOLIO CONTAINER ===============*/
-
 .portfolio {
     display: flex;
     background: var(--background-color-2);
@@ -115,8 +132,6 @@ h2 {
     border-radius: var(--border-radius);
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
 }
-
-/*=============== HEADER ===============*/
 
 .header {
     display: flex;
@@ -133,8 +148,7 @@ h2 {
     width: 150px;
     height: auto;
     border-radius: 50%;
-    margin: 10px;
-    margin-top: 100px;
+    margin: 100px 10px 10px;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -182,8 +196,6 @@ h2 {
     transition-property: background-color, color;
 }
 
-/*=============== CONTENT ===============*/
-
 .content {
     border-radius: var(--border-radius);
     background: white;
@@ -204,16 +216,12 @@ h2 {
     margin: 0 50px;
 }
 
-/*=============== HOME SECTION ===============*/
-
 .home h1 {
     font-size: 3.5rem;
     font-weight: bolder;
     text-align: center;
     margin: 20px;
 }
-
-/*=============== ABOUT SECTION ===============*/
 
 .about {
     display: flex;
@@ -270,13 +278,9 @@ h2 {
 }
 
 .skill img{
-    width: 15px;
-    height: 15px;
     margin-right: 5px;
     align-self: center;
 }
-
-/*=============== PROJECTS SECTION ===============*/
 
 .project-list {
     margin: 20px 0;
@@ -339,8 +343,6 @@ h2 {
     transition: 0.5s ease;
 }
 
-/*=============== EXPERIENCE SECTION ===============*/
-
 .timeline {
     position: relative;
     text-align: justify;
@@ -378,8 +380,6 @@ h2 {
 .timeline-item {
     margin: 50px 0;
 }
-
-/*=============== FORM ===============*/
 
 form {
     width: 100%;
@@ -450,24 +450,6 @@ textarea {
     cursor: pointer;
 }
 
-.cursor {
-    display: inline-block;
-    vertical-align: bottom;
-    width: 2px;
-    height: 1.3em;
-    margin-left: 5px;
-    background-color: black;
-    animation: blink 1s infinite;
-}
-
-.changeLanguage{
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    margin:10px;
-    right: 0;
-}
-
 @keyframes blink {
     0% {
         opacity: 0;
@@ -485,8 +467,6 @@ textarea {
         opacity: 0;
     }
 }
-
-/*=============== MEDIA QUERY ===============*/
 
 @media screen and (max-width: 1200px) {
     html {
@@ -585,5 +565,12 @@ textarea {
         left: 0;
         cursor: pointer;
         transition: 0.5s ease;
+    }
+    .changeLanguage {
+        border-radius: 50% 0 0 50%;
+        margin: 10px 0 0 0;
+    }
+    .changeLanguage img {
+        left: 55%;
     }
 }
