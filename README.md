@@ -25,6 +25,6 @@ I'm excited to see where my journey in computer science will take me and eager t
 
 Contact
 
-    Email: [antoine.faure@viacesi.fr](mailto:antoine.faure@viacesi.fr
-    LinkedIn: [Antoine FAURE](https://www.linkedin.com/in/antoine-faure-057414253/)
-    GitHub: [Arrrlinks](https://github.com/Arrrlinks)
+- Email: [antoine.faure@viacesi.fr](mailto:antoine.faure@viacesi.fr
+- LinkedIn: [Antoine FAURE](https://www.linkedin.com/in/antoine-faure-057414253/)
+- GitHub: [Arrrlinks](https://github.com/Arrrlinks)
