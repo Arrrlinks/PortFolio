@@ -49,3 +49,19 @@ form.addEventListener('submit', (event) => {
     const body = encodeURIComponent(document.getElementById('body').value);
     window.location.href = 'mailto:antoine.faure@viacesi.fr?subject=' + subject + '&body=' + body; // Ouvre le client de messagerie avec les données formatées
 });
+
+const langCheckbox = document.getElementById('lang');
+
+langCheckbox.addEventListener('change', (event) => {
+    if (event.target.checked && lang === 'fr') {
+        //wait for the animation to finish
+        setTimeout(() => {
+            window.location.href = '../en';
+        }, 400);
+    }
+    else if (!event.target.checked && lang === 'en') {
+        setTimeout(() => {
+            window.location.href = '..';
+        }, 400);
+    }
+});
