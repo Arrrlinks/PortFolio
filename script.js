@@ -57,11 +57,11 @@ langCheckbox.addEventListener('change', (event) => {
         //wait for the animation to finish
         setTimeout(() => {
             window.location.href = '../en';
-        }, 400);
+        }, 150);
     }
     else if (!event.target.checked && lang === 'en') {
         setTimeout(() => {
             window.location.href = '..';
-        }, 400);
+        }, 150);
     }
 });
