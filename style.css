@@ -316,6 +316,15 @@ input:checked + .slider:before {
     align-self: center;
 }
 
+.skill a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.skill a:hover{
+    text-decoration: underline;
+}
+
 .project-list {
     margin: 20px 0;
 }
