@@ -52,11 +52,13 @@ p {
 
 h1 {
     line-height: 4rem;
+    text-align: center;
 }
 
 h2 {
     line-height: 2rem;
     font-weight: normal;
+    text-align: center;
 }
 
 .col-2 {
