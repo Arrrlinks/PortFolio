@@ -53,15 +53,15 @@ form.addEventListener('submit', (event) => {
 const langCheckbox = document.getElementById('lang');
 
 langCheckbox.addEventListener('change', (event) => {
+    const hash = window.location.hash;
     if (event.target.checked && lang === 'fr') {
-        //wait for the animation to finish
         setTimeout(() => {
-            window.location.href = '../en';
+            window.location.href = `../en${hash}`;
         }, 150);
     }
     else if (!event.target.checked && lang === 'en') {
         setTimeout(() => {
-            window.location.href = '..';
+            window.location.href = `..${hash}`;
         }, 150);
     }
 });
