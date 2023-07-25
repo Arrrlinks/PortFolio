@@ -29,7 +29,7 @@
 
         <section class="header">
             <img class="header-img"
-                 src=img/antoine.jpg
+                 src="img/antoine.png"
                  alt=""/>
             <h1>Antoine Faure</h1>
             <h2>Étudiant à CESI École d'ingénieur</h2>
@@ -60,7 +60,7 @@
                     </p>
                     <p>
                         Je m'intéresse à tout ce qui concerne l'informatique de près ou de loin, que ce soit le
-                        hardware, le logiciel, les réseaux, la sécurité, le development web, que ce soit en front-end ou
+                        hardware, le logiciel, la sécurité, le development web, que ce soit en front-end ou
                         en back-end, la réalité virtuelle et augmentée et toutes les dernières avancées technologiques.
                         Je suis toujours curieux d'apprendre et de relever des défis. Lorsque je ne programme pas, je
                         joue à des jeux vidéo, je passe du temps avec mes amis et ma famille, ou je fais des activités
@@ -155,7 +155,7 @@
                         </div>
                     </div-->
 
-                    <div class="project-tile"
+                    <!--div class="project-tile"
                          onclick="window.open('https://fluttertodo.antoinef.fr', '_blank');">
                         <img src="img/ToDoApp.png"
                              alt=""/>
@@ -164,6 +164,26 @@
                                 <h3>To Do App Flutter</h3>
                                 <p>
                                     Projet de formation au langage Flutter ainsi qu'à l'utilisation de Firebase.
+                                </p>
+                            </div>
+                        </div>
+                    </div-->
+
+                    <div class="project-tile"
+                         onclick="window.open('https://github.com/Arrrlinks/Berni', '_blank');">
+                        <img src="img/Berni.png"
+                             alt=""/>
+                        <div class="overlay">
+                            <div class="project-description berni">
+                                <h3>Berni</h3>
+                                <p>
+                                    Berni est un robot effectué avec d'autres élèves de CESI en seconde année, c'est un
+                                    robot qui sert à ramasser les mégots sur les plages dans une zone donnée, il est
+                                    équipé d'un rouleau au milieu permettant de ramasser les mégots, le robot bouge de
+                                    façon autonome dans la zone délimitée par du scotch de couleur qu'il détecte grâce à
+                                    son capteur de couleur présent à l'avant du robot.
+                                    Deux batteries sont présentes dans le robot, une de 24V pour alimenter les moteurs et
+                                    une de 5V pour alimenter l'Arduino
                                 </p>
                             </div>
                         </div>
@@ -214,9 +234,7 @@
                                     - Me former aux outils de l'entreprise<br>
                                     - Développer un outil pour répertorier les différents modes opératoires de
                                     l'entreprise<br>
-                                    - Développer un outil pour générer automatiquement les plannings de chantier une
-                                    fois
-                                    qu'une piscine est vendue
+                                    - Développer un outil pour afficher les plannings de chantier
                                 </p>
                             </div>
                         </div>
@@ -243,14 +261,15 @@
                     <div class="input-box">
                         <label for="subject"></label>
                         <input type="text" class="text-input" name="subject" id="subject"
-                               placeholder="Objet"/>
+                               placeholder="Objet" autocomplete="off"/>
                     </div>
                     <div class="input-box">
                         <label for="body"></label>
-                        <textarea class="message" name="body" id="body" placeholder="Message"></textarea>
+                        <textarea class="message" name="body" id="body" placeholder="Message"
+                                  autocomplete="off"></textarea>
                     </div>
                     <div class="input-box">
-                        <input type="submit" class="submit-btn" id="submit" value="Submit"/>
+                        <input type="submit" class="submit-btn" id="submit" value="Envoyer"/>
                     </div>
                 </form>
             </section>

@@ -383,8 +383,17 @@ input:checked + .slider:before {
     max-width: 180px;
     margin: 20px;
     position: absolute;
-    left: -250px;
+    left: -340px;
     transition: 0.5s ease;
+}
+
+.berni{
+    max-width: 300px;
+}
+
+.berni p{
+    line-height: 1rem;
+    font-size: 0.8rem;
 }
 
 .project-tile:hover .overlay {
