@@ -1,4 +1,5 @@
 const welcomeName = document.getElementById('welcome-name'); // Get the element with the id welcome-name
+const aboutMeDiv = document.querySelector('.about-me');
 const lang = document.documentElement.lang; // Get the language of the page
 let words = ['Antoine',/* 'looking for an internship',*/ 'motivated', 'a student at CESI']; // Set the words to display
 if (lang === 'fr') { // If the language is french
@@ -72,8 +73,6 @@ menuIcons.forEach(icon => {
         const prevSibling = icon.previousElementSibling;
         const nextSibling = icon.nextElementSibling;
 
-        console.log(prevSibling, nextSibling)
-
         if (prevSibling && prevSibling.classList.contains('menu-icon')) {
             prevSibling.classList.add('adjacent');
         }
@@ -97,3 +96,54 @@ menuIcons.forEach(icon => {
         }
     });
 });
+
+const contentDiv = document.querySelector('.content')
+document.addEventListener('DOMContentLoaded', () => {
+    displayThings()
+    contentDiv.addEventListener('scroll', () => {
+        console.log(contentDiv.scrollTop);
+        displayThings()
+    })
+    window.addEventListener('scroll', () => {
+        console.log(window.scrollY);
+        displayThings()
+    });
+});
+
+function displayThings(){
+    if((contentDiv.scrollTop > 300 && contentDiv.scrollTop < 1300) || (window.scrollY > 300 && window.scrollY < 1300)){
+        aboutMeDiv.children[0].classList.add('toUp');
+        aboutMeDiv.children[1].classList.add('toUp');
+        aboutMeDiv.children[2].classList.add('toUp');
+    }
+    if((contentDiv.scrollTop > 500 && contentDiv.scrollTop < 1300) || (window.scrollY > 500 && window.scrollY < 1300)){
+        document.querySelector('.french').classList.add('langLoad');
+        document.querySelector('.english').classList.add('langLoad');
+        const skillElements = document.querySelectorAll(".skill");
+
+        skillElements.forEach((element, index) => {
+            const delay = 50 * index;
+            addClassWithDelay(element, "toRight", delay);
+        });
+    }
+    if ((contentDiv.scrollTop > 1200 && contentDiv.scrollTop < 2000) || (window.scrollY > 1000 && window.scrollY < 2100)) {
+        const projectTiles = document.querySelectorAll('.project-tile')
+        projectTiles.forEach((element, index) => {
+            const delay = 150 * index;
+            addClassWithDelay(element, "toUp", delay);
+        });
+    }
+    if ((contentDiv.scrollTop > 2000 && contentDiv.scrollTop < 2800) || (window.scrollY > 1800 && window.scrollY < 2800)) {
+        const timelineItems = document.querySelectorAll('.timeline-item')
+        timelineItems.forEach((element, index) => {
+            const delay = 150 * index;
+            addClassWithDelay(element, "toUp", delay);
+        });
+    }
+}
+
+function addClassWithDelay(element, className, delay) {
+    setTimeout(() => {
+        element.classList.add(className);
+    }, delay);
+}

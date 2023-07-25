@@ -284,6 +284,18 @@ input:checked + .slider:before {
     text-align: justify;
 }
 
+.about-me p {
+    opacity: 0;
+}
+
+.about-me p:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.about-me p:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
 .language {
     margin-bottom: 15px;
 }
@@ -306,14 +318,6 @@ input:checked + .slider:before {
     background: var(--accent-color);
 }
 
-.french {
-    width: 100%;
-}
-
-.english {
-    width: 80%;
-}
-
 .skill {
     background-color: var(--accent-color);
     color: #fff;
@@ -322,6 +326,7 @@ input:checked + .slider:before {
     border-radius: 15px;
     display: inline-flex;
     vertical-align: middle;
+    opacity: 0;
 }
 
 .skill img{
@@ -354,6 +359,7 @@ input:checked + .slider:before {
     margin: auto;
     overflow: hidden;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+    opacity:0;
 }
 
 .project-tile img {
@@ -388,7 +394,7 @@ input:checked + .slider:before {
 }
 
 .berni{
-    max-width: 300px;
+    max-width: 270px;
 }
 
 .berni p{
@@ -444,6 +450,7 @@ input:checked + .slider:before {
 
 .timeline-item {
     margin: 50px 0;
+    opacity: 0;
 }
 
 form {
@@ -513,6 +520,62 @@ textarea {
     transition: 0.2s linear;
     transition-property: background-color, color;
     cursor: pointer;
+}
+
+.toUp{
+    animation: toUp 1s ease-in-out forwards;
+}
+
+@keyframes toUp {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.french.langLoad {
+    animation: frLangLoad 1s ease-in-out forwards;
+}
+
+.english.langLoad {
+    animation: enLangLoad .8s ease-in-out forwards;
+}
+
+.toRight{
+    animation: toRight .4s ease-in-out forwards;
+}
+
+@keyframes frLangLoad {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+@keyframes enLangLoad {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 80%;
+    }
+}
+
+@keyframes toRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes blink {
