@@ -156,11 +156,18 @@ input:checked + .slider:before {
 .menu-icon {
     font-size: 2rem;
     color: var(--light-grey);
-    margin: 15px;
+    padding: 15px;
+    transition: .1s;
 }
 
 .menu-icon:hover {
     color: var(--accent-color);
+    transform: scale(1.25);
+}
+
+.adjacent{
+    transform: scale(1.1);
+    color: #21779077;
 }
 
 .portfolio {
@@ -552,7 +559,7 @@ textarea {
     }
     .menu-icon {
         font-size: 2rem;
-        margin: 0 15px;
+        padding: 0 15px;
     }
     .home h1 {
         font-size: 3rem;

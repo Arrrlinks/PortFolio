@@ -1,67 +1,99 @@
-const welcomeName = document.getElementById('welcome-name');
-const lang = document.documentElement.lang
-let words = ['Antoine',/* 'looking for an internship',*/ 'motivated', 'a student at CESI'];
-if (lang === 'fr') {
-    words = ['Antoine', /*'à la recherche d\'un stage',*/ 'motivé', 'étudiant à CESI'];
+const welcomeName = document.getElementById('welcome-name'); // Get the element with the id welcome-name
+const lang = document.documentElement.lang; // Get the language of the page
+let words = ['Antoine',/* 'looking for an internship',*/ 'motivated', 'a student at CESI']; // Set the words to display
+if (lang === 'fr') { // If the language is french
+    words = ['Antoine', /*'à la recherche d\'un stage',*/ 'motivé', 'étudiant à CESI']; // Set the words to display
 }
-let wordIndex = 0;
-let i = words[wordIndex].length;
-let isDeleting = false;
-let speed = 100; // vitesse de suppression et d'ajout des lettres
-let delay = 2000; // délai avant de commencer à effacer le mot
+let wordIndex = 0; // Set the index of the word to 0
+let i = words[wordIndex].length; // Set the index of the letter to the length of the first word
+let isDeleting = false; // Set the deleting state to false
+let speed = 100; // Set the speed of the typing
+let delay = 2000; // Set the delay between the words
 
-function type() {
-    const currentWord = words[wordIndex];
-    const text = isDeleting ? currentWord.substring(0, i - 1) : currentWord.substring(0, i);
-    welcomeName.textContent = text;
-    if (isDeleting) {
-        i--;
-    } else {
-        i++;
+function type() { // Function to type the words
+    const currentWord = words[wordIndex]; // Get the current word
+    welcomeName.textContent = isDeleting ? currentWord.substring(0, i - 1) : currentWord.substring(0, i); // Set the text of the element to the text to display
+    if (isDeleting) { // If the deleting state is true
+        i--; // Decrease the index of the letter
+    } else { // If the deleting state is false
+        i++; // Increase the index of the letter
     }
-    if (i == currentWord.length + 1) {
-        isDeleting = true;
-        speed = 150;
-        delay = 2000;
+    if (i === currentWord.length + 1) { // If the index of the letter is equal to the length of the current word + 1
+        isDeleting = true; // Set the deleting state to true
+        speed = 150; // Set the speed of the typing
+        delay = 2000; // Set the delay between the words
     }
-    if (i == 0) {
-        wordIndex = (wordIndex + 1) % words.length;
-        isDeleting = false;
-        speed = 100;
-        delay = 2000;
+    if (i === 0) { // If the index of the letter is equal to 0
+        wordIndex = (wordIndex + 1) % words.length; // Increase the index of the word
+        isDeleting = false; // Set the deleting state to false
+        speed = 100; // Set the speed of the typing
+        delay = 2000; // Set the delay between the words
     }
-    if (i === currentWord.length + 1) {
-        setTimeout(type, delay);
-    } else {
-        setTimeout(type, speed);
+    if (i === currentWord.length + 1) { // If the index of the letter is equal to the length of the current word + 1
+        setTimeout(type, delay); // Call the function after the delay
+    } else { // If the index of the letter is not equal to the length of the current word + 1
+        setTimeout(type, speed); // Call the function after the speed
     }
 }
 
-setTimeout(type, delay);
+setTimeout(type, delay); // Call the function after the delay
 
 
-const form = document.getElementById('form');
-const submitButton = document.getElementById('submit');
-form.addEventListener('submit', (event) => {
-    event.preventDefault(); // Empêche l'action de formulaire par défaut
+const form = document.getElementById('form'); // Get the element with the id form
+form.addEventListener('submit', (event) => { // Add an event listener on the form
+    event.preventDefault(); // Prevent the default action
 
-    const subject = encodeURIComponent(document.getElementById('subject').value);
-    const body = encodeURIComponent(document.getElementById('body').value);
-    window.location.href = 'mailto:antoine.faure@viacesi.fr?subject=' + subject + '&body=' + body; // Ouvre le client de messagerie avec les données formatées
+    const subject = encodeURIComponent(document.getElementById('subject').value); // Get the value of the element with the id subject
+    const body = encodeURIComponent(document.getElementById('body').value); // Get the value of the element with the id body
+    window.location.href = 'mailto:antoine.faure@viacesi.fr?subject=' + subject + '&body=' + body; // Open the mail app with the subject and the body
 });
 
-const langCheckbox = document.getElementById('lang');
+const langCheckbox = document.getElementById('lang'); // Get the element with the id lang
 
-langCheckbox.addEventListener('change', (event) => {
-    const hash = window.location.hash;
-    if (event.target.checked && lang === 'fr') {
-        setTimeout(() => {
-            window.location.href = `../en${hash}`;
-        }, 150);
+langCheckbox.addEventListener('change', (event) => { // Add an event listener on the lang checkbox
+    const hash = window.location.hash; // Get the hash of the page
+    if (event.target.checked && lang === 'fr') { // If the checkbox is checked and the language is french
+        setTimeout(() => { // Set a timeout
+            window.location.href = `../en${hash}`; // Redirect to the english version of the page
+        }, 150); // 150ms
     }
-    else if (!event.target.checked && lang === 'en') {
-        setTimeout(() => {
-            window.location.href = `..${hash}`;
-        }, 150);
+    else if (!event.target.checked && lang === 'en') { // If the checkbox is not checked and the language is english
+        setTimeout(() => { // Set a timeout
+            window.location.href = `..${hash}`; // Redirect to the french version of the page
+        }, 150); // 150ms
     }
+});
+
+const menuIcons = document.querySelectorAll('.menu-icon');
+
+menuIcons.forEach(icon => {
+    icon.addEventListener('mouseenter', () => {
+        icon.classList.add('adjacent');
+        const prevSibling = icon.previousElementSibling;
+        const nextSibling = icon.nextElementSibling;
+
+        console.log(prevSibling, nextSibling)
+
+        if (prevSibling && prevSibling.classList.contains('menu-icon')) {
+            prevSibling.classList.add('adjacent');
+        }
+
+        if (nextSibling && nextSibling.classList.contains('menu-icon')) {
+            nextSibling.classList.add('adjacent');
+        }
+    });
+
+    icon.addEventListener('mouseleave', () => {
+        icon.classList.remove('adjacent');
+        const prevSibling = icon.previousElementSibling;
+        const nextSibling = icon.nextElementSibling;
+
+        if (prevSibling && prevSibling.classList.contains('menu-icon')) {
+            prevSibling.classList.remove('adjacent');
+        }
+
+        if (nextSibling && nextSibling.classList.contains('menu-icon')) {
+            nextSibling.classList.remove('adjacent');
+        }
+    });
 });
