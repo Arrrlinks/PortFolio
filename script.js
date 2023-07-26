@@ -101,11 +101,9 @@ const contentDiv = document.querySelector('.content') // Get the element with th
 document.addEventListener('DOMContentLoaded', () => { // Add an event listener on the DOMContentLoaded event
     displayThings() // Call the function to display the elements
     contentDiv.addEventListener('scroll', () => { // Add an event listener on the scroll event
-        console.log(contentDiv.scrollTop); // Log the scroll position
         displayThings() // Call the function to display the elements
     })
     window.addEventListener('scroll', () => { // Add an event listener on the scroll event
-        console.log(window.scrollY); // Log the scroll position
         displayThings() // Call the function to display the elements
     });
 });
