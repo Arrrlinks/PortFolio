@@ -65,85 +65,85 @@ langCheckbox.addEventListener('change', (event) => { // Add an event listener on
     }
 });
 
-const menuIcons = document.querySelectorAll('.menu-icon');
+const menuIcons = document.querySelectorAll('.menu-icon'); // Get all the elements with the class menu-icon
 
-menuIcons.forEach(icon => {
-    icon.addEventListener('mouseenter', () => {
-        icon.classList.add('adjacent');
-        const prevSibling = icon.previousElementSibling;
-        const nextSibling = icon.nextElementSibling;
+menuIcons.forEach(icon => { // For each element
+    icon.addEventListener('mouseenter', () => { // Add an event listener on the mouseenter event
+        icon.classList.add('adjacent'); // Add the class adjacent to the element
+        const prevSibling = icon.previousElementSibling; // Get the previous sibling of the element
+        const nextSibling = icon.nextElementSibling; // Get the next sibling of the element
 
-        if (prevSibling && prevSibling.classList.contains('menu-icon')) {
-            prevSibling.classList.add('adjacent');
+        if (prevSibling && prevSibling.classList.contains('menu-icon')) { // If the previous sibling exists and has the class menu-icon
+            prevSibling.classList.add('adjacent'); // Add the class adjacent to the previous sibling
         }
 
-        if (nextSibling && nextSibling.classList.contains('menu-icon')) {
-            nextSibling.classList.add('adjacent');
+        if (nextSibling && nextSibling.classList.contains('menu-icon')) { // If the next sibling exists and has the class menu-icon
+            nextSibling.classList.add('adjacent'); // Add the class adjacent to the next sibling
         }
     });
 
-    icon.addEventListener('mouseleave', () => {
-        icon.classList.remove('adjacent');
-        const prevSibling = icon.previousElementSibling;
-        const nextSibling = icon.nextElementSibling;
+    icon.addEventListener('mouseleave', () => { // Add an event listener on the mouseleave event
+        icon.classList.remove('adjacent'); // Remove the class adjacent to the element
+        const prevSibling = icon.previousElementSibling; // Get the previous sibling of the element
+        const nextSibling = icon.nextElementSibling; // Get the next sibling of the element
 
-        if (prevSibling && prevSibling.classList.contains('menu-icon')) {
-            prevSibling.classList.remove('adjacent');
+        if (prevSibling && prevSibling.classList.contains('menu-icon')) { // If the previous sibling exists and has the class menu-icon
+            prevSibling.classList.remove('adjacent'); // Remove the class adjacent to the previous sibling
         }
 
-        if (nextSibling && nextSibling.classList.contains('menu-icon')) {
-            nextSibling.classList.remove('adjacent');
+        if (nextSibling && nextSibling.classList.contains('menu-icon')) { // If the next sibling exists and has the class menu-icon
+            nextSibling.classList.remove('adjacent'); // Remove the class adjacent to the next sibling
         }
     });
 });
 
-const contentDiv = document.querySelector('.content')
-document.addEventListener('DOMContentLoaded', () => {
-    displayThings()
-    contentDiv.addEventListener('scroll', () => {
-        console.log(contentDiv.scrollTop);
-        displayThings()
+const contentDiv = document.querySelector('.content') // Get the element with the class content
+document.addEventListener('DOMContentLoaded', () => { // Add an event listener on the DOMContentLoaded event
+    displayThings() // Call the function to display the elements
+    contentDiv.addEventListener('scroll', () => { // Add an event listener on the scroll event
+        console.log(contentDiv.scrollTop); // Log the scroll position
+        displayThings() // Call the function to display the elements
     })
-    window.addEventListener('scroll', () => {
-        console.log(window.scrollY);
-        displayThings()
+    window.addEventListener('scroll', () => { // Add an event listener on the scroll event
+        console.log(window.scrollY); // Log the scroll position
+        displayThings() // Call the function to display the elements
     });
 });
 
-function displayThings(){
-    if((contentDiv.scrollTop > 300 && contentDiv.scrollTop < 1300) || (window.scrollY > 300 && window.scrollY < 1300)){
-        aboutMeDiv.children[0].classList.add('toUp');
-        aboutMeDiv.children[1].classList.add('toUp');
-        aboutMeDiv.children[2].classList.add('toUp');
+function displayThings(){ // Function to display the elements
+    if((contentDiv.scrollTop > 300 && contentDiv.scrollTop < 1300) || (window.scrollY > 300 && window.scrollY < 1300)){ // If the scroll position is between 300 and 1300
+        aboutMeDiv.children[0].classList.add('toUp'); // Add the class toUp to the first child of the element with the class about-me
+        aboutMeDiv.children[1].classList.add('toUp'); // Add the class toUp to the second child of the element with the class about-me
+        aboutMeDiv.children[2].classList.add('toUp'); // Add the class toUp to the third child of the element with the class about-me
     }
-    if((contentDiv.scrollTop > 500 && contentDiv.scrollTop < 1300) || (window.scrollY > 500 && window.scrollY < 1300)){
-        document.querySelector('.french').classList.add('langLoad');
-        document.querySelector('.english').classList.add('langLoad');
-        const skillElements = document.querySelectorAll(".skill");
+    if((contentDiv.scrollTop > 500 && contentDiv.scrollTop < 1300) || (window.scrollY > 500 && window.scrollY < 1300)){ // If the scroll position is between 500 and 1300
+        document.querySelector('.french').classList.add('langLoad'); // Add the class langLoad to the element with the class french
+        document.querySelector('.english').classList.add('langLoad'); // Add the class langLoad to the element with the class english
+        const skillElements = document.querySelectorAll(".skill"); // Get all the elements with the class skill
 
-        skillElements.forEach((element, index) => {
-            const delay = 50 * index;
-            addClassWithDelay(element, "toRight", delay);
+        skillElements.forEach((element, index) => { // For each element
+            const delay = 50 * index; // Calculate the delay
+            addClassWithDelay(element, "toRight", delay); // Call the function to add the class toRight with the delay
         });
     }
-    if ((contentDiv.scrollTop > 1200 && contentDiv.scrollTop < 2000) || (window.scrollY > 1000 && window.scrollY < 2100)) {
-        const projectTiles = document.querySelectorAll('.project-tile')
-        projectTiles.forEach((element, index) => {
-            const delay = 150 * index;
-            addClassWithDelay(element, "toUp", delay);
+    if ((contentDiv.scrollTop > 1200 && contentDiv.scrollTop < 2000) || (window.scrollY > 1000 && window.scrollY < 2100)) { // If the scroll position is between 1200 and 2000
+        const projectTiles = document.querySelectorAll('.project-tile') // Get all the elements with the class project-tile
+        projectTiles.forEach((element, index) => { // For each element
+            const delay = 150 * index; // Calculate the delay
+            addClassWithDelay(element, "toUp", delay); // Call the function to add the class toUp with the delay
         });
     }
-    if ((contentDiv.scrollTop > 2000 && contentDiv.scrollTop < 2800) || (window.scrollY > 1800 && window.scrollY < 2800)) {
-        const timelineItems = document.querySelectorAll('.timeline-item')
-        timelineItems.forEach((element, index) => {
-            const delay = 150 * index;
-            addClassWithDelay(element, "toUp", delay);
+    if ((contentDiv.scrollTop > 2000 && contentDiv.scrollTop < 2800) || (window.scrollY > 1800 && window.scrollY < 2800)) { // If the scroll position is between 2000 and 2800
+        const timelineItems = document.querySelectorAll('.timeline-item') // Get all the elements with the class timeline-item
+        timelineItems.forEach((element, index) => { // For each element
+            const delay = 150 * index; // Calculate the delay
+            addClassWithDelay(element, "toUp", delay) // Call the function to add the class toUp with the delay
         });
     }
 }
 
-function addClassWithDelay(element, className, delay) {
-    setTimeout(() => {
-        element.classList.add(className);
-    }, delay);
+function addClassWithDelay(element, className, delay) { // Function to add a class with a delay
+    setTimeout(() => { // Set a timeout
+        element.classList.add(className); // Add the class to the element
+    }, delay); // The delay
 }
