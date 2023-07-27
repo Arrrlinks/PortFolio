@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-    --accent-color: #217790;
-    --background-color: #014f7b;
-    --background-color-2: #005986;
-    --light-grey: rgb(194, 194, 194);
+    --accent-color: #008cdd;
+    --accent-color-2: #008cdd77;
+    --overlay-color: #008cdde0;
+    --background-color: #006fb3;
+    --background-color-2: #006fb3;
+    --background-color-3: #005e93;
+    --light-grey: #C2C2C2;
     --border-radius: 30px;
 }
 
@@ -34,9 +37,9 @@ html {
     font-size: 16px;
     font-family: "Montserrat", sans-serif;
     background-color: var(--background-color);
-    background: -moz-linear-gradient(145deg, var(--background-color) 0%, rgba(0,67,105,1) 100%);
-    background: -webkit-linear-gradient(145deg, var(--background-color) 0%, rgba(0,67,105,1) 100%);
-    background: linear-gradient(145deg, var(--background-color) 0%, rgba(0,67,105,1) 100%);
+    background: -moz-linear-gradient(145deg, var(--background-color) 0%, var(--background-color-3) 100%);
+    background: -webkit-linear-gradient(145deg, var(--background-color) 0%, var(--background-color-3) 100%);
+    background: linear-gradient(145deg, var(--background-color) 0%, var(--background-color-3) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#014f7b",endColorstr="#004369",GradientType=1);
 }
 
@@ -83,6 +86,10 @@ h2 {
     margin-left: 5px;
     background-color: black;
     animation: blink 1s infinite;
+}
+
+#welcome-name{
+    color: var(--accent-color);
 }
 
 .switch {
@@ -167,7 +174,7 @@ input:checked + .slider:before {
 
 .adjacent{
     transform: scale(1.1);
-    color: #21779077;
+    color: var(--accent-color-2);
 }
 
 .portfolio {
@@ -372,7 +379,7 @@ input:checked + .slider:before {
 }
 
 .overlay {
-    background: #217790e0;
+    background: var(--overlay-color);
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -691,7 +698,7 @@ textarea {
         width: 100%;
         cursor: pointer;
         transition: 0.5s ease;
-        background-color: #21779077;
+        background-color: var(--accent-color-2);
     }
     .project-tile .project-description {
         left: 0;
