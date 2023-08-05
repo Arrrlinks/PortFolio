@@ -470,6 +470,10 @@ form {
     align-items: center;
 }
 
+.input-box #body{
+    height: 180px;
+}
+
 .input-box input,
 textarea {
     width: 100%;
