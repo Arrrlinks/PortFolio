@@ -1,9 +1,9 @@
 const welcomeName = document.getElementById('welcome-name'); // Get the element with the id welcome-name
 const aboutMeDiv = document.querySelector('.about-me');
 const lang = document.documentElement.lang; // Get the language of the page
-let words = ['Antoine',/* 'looking for an internship',*/ 'motivated', 'a student at CESI']; // Set the words to display
+let words = ['Antoine', 'looking for an internship', 'motivated', 'a student at CESI']; // Set the words to display
 if (lang === 'fr') { // If the language is french
-    words = ['Antoine', /*'à la recherche d\'un stage',*/ 'motivé', 'étudiant à CESI']; // Set the words to display
+    words = ['Antoine', 'à la recherche d\'un stage', 'motivé', 'étudiant à CESI']; // Set the words to display
 }
 let wordIndex = 0; // Set the index of the word to 0
 let i = words[wordIndex].length; // Set the index of the letter to the length of the first word
@@ -21,7 +21,7 @@ function type() { // Function to type the words
     }
     if (i === currentWord.length + 1) { // If the index of the letter is equal to the length of the current word + 1
         isDeleting = true; // Set the deleting state to true
-        speed = 150; // Set the speed of the typing
+        speed = 80; // Set the speed of the typing
         delay = 2000; // Set the delay between the words
     }
     if (i === 0) { // If the index of the letter is equal to 0
