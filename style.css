@@ -553,7 +553,7 @@ textarea {
 }
 
 .english.langLoad {
-    animation: enLangLoad .8s ease-in-out forwards;
+    animation: enLangLoad .9s ease-in-out forwards;
 }
 
 .toRight{
@@ -574,7 +574,7 @@ textarea {
         width: 0;
     }
     100%{
-        width: 80%;
+        width: 90%;
     }
 }
 
