@@ -344,7 +344,6 @@ input:checked + .slider:before {
 .skill img{
     margin-right: 5px;
     align-self: center;
-    width: 13px;
     height: 13px;
 }
 
