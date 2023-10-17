@@ -7,6 +7,7 @@
     --background-color: #006fb3;
     --background-color-2: #006fb3;
     --background-color-3: #005e93;
+    --text-color: #545454;
     --light-grey: #C2C2C2;
     --border-radius: 30px;
 }
@@ -40,6 +41,7 @@ html {
     background: -moz-linear-gradient(145deg, var(--background-color) 0%, var(--background-color-3) 100%);
     background: -webkit-linear-gradient(145deg, var(--background-color) 0%, var(--background-color-3) 100%);
     background: linear-gradient(145deg, var(--background-color) 0%, var(--background-color-3) 100%);
+    color: var(--text-color);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#014f7b",endColorstr="#004369",GradientType=1);
 }
 
@@ -49,8 +51,8 @@ a {
 }
 
 p {
-    line-height: 1.5rem;
-    margin-bottom: 0.7rem;
+    line-height: 1.35rem;
+    margin-bottom: 0.3rem;
 }
 
 h1 {
@@ -71,6 +73,10 @@ h2 {
     width: 100%;
 }
 
+.col-2 h1{
+    font-size: 1.2rem;
+}
+
 .container {
     display: flex;
     align-items: center;
@@ -84,7 +90,7 @@ h2 {
     width: 2px;
     height: 1.3em;
     margin-left: 5px;
-    background-color: black;
+    background-color: var(--text-color);
     animation: blink 1s infinite;
 }
 
@@ -284,7 +290,6 @@ input:checked + .slider:before {
 
 .about-item {
     width: 100%;
-    margin: 0.5rem 0;
 }
 
 .about-me{
@@ -328,8 +333,8 @@ input:checked + .slider:before {
 .skill {
     background-color: var(--accent-color);
     color: #fff;
-    margin: 10px 0 0 0;
-    padding: 5px 10px;
+    margin: 5px 0 0 0;
+    padding: 3px 7px;
     border-radius: 15px;
     display: inline-flex;
     vertical-align: middle;
@@ -339,6 +344,8 @@ input:checked + .slider:before {
 .skill img{
     margin-right: 5px;
     align-self: center;
+    width: 13px;
+    height: 13px;
 }
 
 .skill a{
@@ -348,6 +355,26 @@ input:checked + .slider:before {
 
 .skill a:hover{
     text-decoration: underline;
+}
+
+.skillTitle{
+    width: 100%;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    white-space: nowrap;
+}
+
+.skillTitle:before,.skillTitle:after{
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-color);
+    vertical-align: middle;
+    margin: 5px;
 }
 
 .project-list {
