@@ -216,7 +216,7 @@ input:checked + .slider:before {
 
 .socials {
     margin: 20px;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .socials a {
@@ -236,11 +236,11 @@ input:checked + .slider:before {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.2);
     padding: 10px 20px;
-    margin: 50px 0;
+    margin: 10px 0;
     border-radius: 30px;
     transition: 0.2s linear;
     transition-property: background-color, color;
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .header .cta:hover {
@@ -393,7 +393,8 @@ input:checked + .slider:before {
 
 .project-description {
     line-height: normal;
-    max-width: 180px;
+    min-width: 80%;
+    max-width: 80%;
     margin: 20px;
     position: absolute;
     left: -340px;
