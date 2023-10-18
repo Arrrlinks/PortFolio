@@ -3,7 +3,13 @@ version: "3.9"
 services:
   web:
     build: .
-    ports:
-      - "8000:80"
+    networks:
+        - caddy
     volumes:
       - ./:/var/www/html
+    restart: unless-stopped
+    container_name: portfolio
+
+networks:
+    caddy:
+        external: true
