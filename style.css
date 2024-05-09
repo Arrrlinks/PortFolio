@@ -483,7 +483,7 @@ input:checked + .slider:before {
 }
 
 .timeline-item {
-    margin: 50px 0;
+    margin: 20px 0;
     opacity: 0;
 }
 
