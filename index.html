@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="fontawesome-free-6.5.2-web/css/fontawesome.css" rel="stylesheet">
     <link href="fontawesome-free-6.5.2-web/css/brands.css" rel="stylesheet">
-    <link href="fontawesome-free-6.5.2-web/css/solid.css" rel="stylesheet" />
+    <link href="fontawesome-free-6.5.2-web/css/solid.css" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css">
     <title>Antoine FAURE</title>
 </head>
 <body>
 <nav id="navbar" class="navbar"><a href="#"></a></nav>
+
+<div id="tooltip" class="tooltip" style="display: none;"></div>
 
 <div class="container">
     <div class="menu">
@@ -34,7 +36,7 @@
             <h1>Antoine Faure</h1>
             <h2>Étudiant à CESI École d'ingénieur</h2>
             <!--h2>Actuellement en stage chez Piscines DesJoyaux</h2-->
-            <h2><b>À la recherche d'un stage à partir du 02/09/2024 pour une période de 18 à 23 semaines</b></h2>
+            <h2><b>À la recherche d'un contrat d'alternance à partir de septembre 2025</b></h2>
             <div class="socials">
                 <a href="https://www.linkedin.com/in/antoine-faure-057414253/" target="_blank"
                    class="fab fa-linkedin-in" id="profile-link"></a>
@@ -54,7 +56,7 @@
                 <h1>À propos de moi</h1>
                 <div class="about-item about-me">
                     <p>
-                        Bonjour, je suis Antoine FAURE ! Je suis actuellement en troisième année d'études à l'école
+                        Bonjour, je suis Antoine FAURE ! Je suis actuellement en quatrième année d'études à l'école
                         d'ingénieurs CESI mineure informatique. Passionné d'informatique, de codage et d'explorer de
                         nouvelles technologies.
                     </p>
@@ -67,53 +69,63 @@
                         telles que de la natation, du badminton ou encore du volley.
                     </p>
                     <p>
-                        Je suis impatient de voir où mon parcours dans l'informatique me mènera et de
-                        continuer à développer mes compétences et mes connaissances.
+                        Je souhaite à l'avenir me diriger vers le domaine de la recherche, plus particulièrement
+                        l'intelligence artificielle et la robotique. Je suis également intéressé par le développement
+                        web et le développement d'applications mobiles. Je suis toujours à la recherche de nouveaux
+                        défis et d'opportunités pour apprendre et grandir dans ces domaines.
                     </p>
                 </div>
                 <div class="col-2">
                     <div class="about-item skills">
                         <h1>Compétences</h1>
                         <span class="skillTitle">Web</span>
-                        <span class="skill"><img src="img/nodejs.png" alt="node.js">Node.js</span>
-                        <span class="skill"><img src="img/php.png" alt="php">PHP</span>
-                        <span class="skill"><img src="img/flutter.png" alt="flutter">Flutter</span>
-                        <span class="skill"><img src="img/svelte.png" alt="svelte">Svelte</span>
-                        <span class="skill"><img src="img/pwa.png" alt="pwa">PWA</span>
-                        <span class="skill"><img src="img/firebase.png" alt="firebase">Firebase</span>
-                        <span class="skill"><img src="img/figma.png" alt="figma">Figma</span>
+                        <span class="skill"><img src="img/logo/nodejs.png" alt="node.js">Node.js</span>
+                        <span class="skill"><img src="img/logo/php.png" alt="php">PHP</span>
+                        <span class="skill"><img src="img/logo/flutter.png" alt="flutter">Flutter</span>
+                        <span class="skill"><img src="img/logo/svelte.png" alt="svelte">Svelte</span>
+
+                        <span class="skillTitle">Hardware</span>
+                        <span class="skill"><img src="img/logo/automated-systems.png" alt="automated systems">Systèmes Automatisés</span>
+                        <span class="skill"><img src="img/logo/arduino.png" alt="arduino">Arduino</span>
+                        <span class="skill"><img src="img/logo/electronics.png" alt="electronics">Électronique</span>
+                        <span class="skill"><img src="img/logo/bluetooth.png" alt="bluetooth">Bluetooth</span>
+
+                        <span class="skillTitle">IA</span>
+                        <span class="skill"><img src="img/logo/neural-networks.png" alt="neural networks">Réseaux neuronaux</span>
+                        <span class="skill"><img src="img/logo/machine-learning.png" alt="machine learning">Machine Learning</span>
+                        <span class="skill"><img src="img/logo/genetic-algorithm.png" alt="genetic algorithm">Algorithmes génétiques</span>
+
+                        <span class="skillTitle">Développement</span>
+                        <span class="skill"><img src="img/logo/python.png" alt="python">Python</span>
+                        <span class="skill"><img src="img/logo/salesforce.png" alt="salesforce">Salesforce</span>
+                        <span class="skill"><img src="img/logo/C.png" alt="c">C</span>
+                        <span class="skill"><img src="img/logo/C++.png" alt="c++">C++</span>
+                        <span class="skill"><img src="img/logo/csharp.png" alt="c#">C#</span>
 
                         <span class="skillTitle">Base de données</span>
-                        <span class="skill"><img src="img/mysql.png" alt="mysql">MySQL</span>
-                        <span class="skill"><img src="img/sqlserver.png" alt="mysql">SQL Server</span>
+                        <span class="skill"><img src="img/logo/mysql.png" alt="mysql">MySQL</span>
+                        <span class="skill"><img src="img/logo/sqlserver.png" alt="mysql">SQL Server</span>
+                        <span class="skill"><img src="img/logo/firebase.png" alt="firebase">Firebase</span>
+                        <span class="skill"><img src="img/logo/postgre.png" alt="postgreSQL">PostgreSQL</span>
+                        <span class="skill"><img src="img/logo/sqlite.png">SQLite</span>
 
                         <span class="skillTitle">Admin système</span>
-                        <span class="skill"><img src="img/linux.png" alt="linux">Linux</span>
-                        <span class="skill"><img src="img/docker.png" alt="docker">Docker</span>
-                        <span class="skill"><img src="img/powershell.png" alt="powershell">PowerShell</span>
-                        <span class="skill"><img src="img/bash.png" alt="bash">Bash</span>
+                        <span class="skill"><img src="img/logo/linux.png" alt="linux">Linux</span>
+                        <span class="skill"><img src="img/logo/docker.png" alt="docker">Docker</span>
 
                         <span class="skillTitle">Réseau</span>
                         <span class="skill"><a
                                 href="https://www.credly.com/badges/0a861023-51b9-43ce-ae13-eea727d92051/public_url"
-                                target="_blank"><img src="img/ccna.png" alt="ccna">CCNA1</a></span>
-
-                        <span class="skillTitle">Développement</span>
-                        <span class="skill"><img src="img/python.png" alt="python">Python</span>
-                        <span class="skill"><img src="img/salesforce.png" alt="salesforce">Salesforce</span>
-                        <span class="skill"><img src="img/arduino.png" alt="arduino">Arduino</span>
-                        <span class="skill"><img src="img/C.png" alt="c">C</span>
-                        <span class="skill"><img src="img/C++.png" alt="c++">C++</span>
-                        <span class="skill"><img src="img/csharp.png" alt="c#">C#</span>
+                                target="_blank"><img src="img/logo/ccna.png" alt="ccna">CCNA1</a></span>
                     </div>
 
                     <div class="about-item languages">
                         <h1>Langues</h1>
-                        <div class="language">
+                        <div class="language" data-tooltip="Langue maternelle">
                             <p>Français</p>
                             <span class="bar"><span class="french"></span></span>
                         </div>
-                        <div class="language">
+                        <div class="language" data-tooltip="TOEIC : 885/990 - B2">
                             <p>Anglais</p>
                             <span class="bar"><span class="english"></span></span>
                         </div>
@@ -125,8 +137,8 @@
                 <h1>Mes Projets</h1>
                 <div class="col-2 project-list">
 
-                    <div class="project-tile" onclick="window.open('https://task.antoinef.fr', '_blank');">
-                        <img src="img/TasK.png"
+                    <!--div class="project-tile" onclick="window.open('https://task.antoinef.fr', '_blank');">
+                        <img src="img/thumbnail/TasK.png"
                              alt=""/>
                         <div class="overlay">
                             <div class="project-description">
@@ -136,11 +148,42 @@
                                 </p>
                             </div>
                         </div>
+                    </div-->
+
+                    <div class="project-tile"
+                         onclick="window.open('https://github.com/Arrrlinks/Berni', '_blank');">
+                        <img src="img/thumbnail/Berni.png"
+                             alt=""/>
+                        <div class="overlay">
+                            <div class="project-description">
+                                <h3>Berni</h3>
+                                <p>
+                                    Berni est un robot conçu par des élèves du CESI pour le concours IBM, il collecte
+                                    les mégots sur les plages de manière autonome à l'aide d'un rouleau central.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-tile"
+                         onclick="window.open('https://github.com/Arrrlinks/image-distortion-correction', '_blank');">
+                        <img src="img/thumbnail/glue-measurements.png"
+                             alt=""/>
+                        <div class="overlay">
+                            <div class="project-description">
+                                <h3>Correction de distorsion et mesure automatique</h3>
+                                <p>
+                                    Ce projet automatise l'application de colle pour assembler un téléphone en utilisant
+                                    la vision par ordinateur pour corriger les distorsions d'image et mesurer la
+                                    géométrie du fil de colle.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="project-tile"
                          onclick="window.open('https://github.com/Arrrlinks/Web-Project', '_blank');">
-                        <img src="img/CesiEnFait.png"
+                        <img src="img/thumbnail/CesiEnFait.png"
                              alt=""/>
                         <div class="overlay">
                             <div class="project-description">
@@ -181,24 +224,10 @@
                         </div>
                     </div-->
 
-                    <div class="project-tile"
-                         onclick="window.open('https://github.com/Arrrlinks/Berni', '_blank');">
-                        <img src="img/Berni.png"
-                             alt=""/>
-                        <div class="overlay">
-                            <div class="project-description">
-                                <h3>Berni</h3>
-                                <p>
-                                    Berni est un robot conçu par des élèves du CESI pour le concours IBM, il collecte
-                                    les mégots sur les plages de manière autonome à l'aide d'un rouleau central.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="project-tile"
                          onclick="window.open('https://github.com/Arrrlinks/SysProg', '_blank');">
-                        <img src="img/easysave.jpg"
+                        <img src="img/thumbnail/easysave.jpg"
                              alt=""/>
                         <div class="overlay">
                             <div class="project-description">
@@ -242,6 +271,18 @@
                                     CESI est une école d'ingénieur, je me suis orienté dans le domaine de
                                     l'informatique, ce parcours me permet d'apprendre les fondamentaux de
                                     l'informatique, ainsi que ceux de la gestion de projet
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Septembre 2024 - Janvier 2025</div>
+                            <div class="timeline-content">
+                                <h3>Stage à l'Université Polytechnique de Timisoara</h3>
+                                <p>
+                                    Stage à l'étranger dans le cadre de ma formation, effectué à l'Université
+                                    Polytechnique de Timisoara, en Roumanie. Ce stage est un projet de recherche
+                                    où j'ai réaliser un projet en Flutter, me permettant de découvrir les technologies
+                                    Bluetooth<br>
                                 </p>
                             </div>
                         </div>

@@ -1,9 +1,9 @@
 const welcomeName = document.getElementById('welcome-name'); // Get the element with the id welcome-name
 const aboutMeDiv = document.querySelector('.about-me');
 const lang = document.documentElement.lang; // Get the language of the page
-let words = ['Antoine', 'looking for an internship', 'motivated', 'a student at CESI']; // Set the words to display
+let words = ['Antoine', 'looking for an study-work contract', 'motivated', 'a student at CESI']; // Set the words to display
 if (lang === 'fr') { // If the language is french
-    words = ['Antoine', 'à la recherche d\'un stage', 'motivé', 'étudiant à CESI']; // Set the words to display
+    words = ['Antoine', 'à la recherche d\'un contrat d\'alternance', 'motivé', 'étudiant à CESI']; // Set the words to display
 }
 let wordIndex = 0; // Set the index of the word to 0
 let i = words[wordIndex].length; // Set the index of the letter to the length of the first word
@@ -145,3 +145,26 @@ function addClassWithDelay(element, className, delay) { // Function to add a cla
         element.classList.add(className); // Add the class to the element
     }, delay); // The delay
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const tooltip = document.getElementById("tooltip");
+    const languages = document.querySelectorAll(".language");
+
+    languages.forEach(lang => {
+        lang.addEventListener("mousemove", (e) => {
+            const message = lang.getAttribute("data-tooltip");
+            if (message) {
+                tooltip.textContent = message;
+                tooltip.style.left = e.pageX + 10 + "px";
+                tooltip.style.top = e.pageY + 10 + "px";
+                tooltip.style.display = "block";
+                tooltip.style.opacity = "1";
+            }
+        });
+
+        lang.addEventListener("mouseleave", () => {
+            tooltip.style.display = "none";
+            tooltip.style.opacity = "0";
+        });
+    });
+});
