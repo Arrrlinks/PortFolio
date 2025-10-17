@@ -3,7 +3,7 @@ const aboutMeDiv = document.querySelector('.about-me');
 const lang = document.documentElement.lang; // Get the language of the page
 let words = ['Antoine', 'looking for an study-work contract', 'motivated', 'a student at CESI']; // Set the words to display
 if (lang === 'fr') { // If the language is french
-    words = ['Antoine', 'à la recherche d\'un contrat d\'alternance', 'motivé', 'étudiant à CESI']; // Set the words to display
+    words = ['Antoine', 'à la recherche d\'un stage', 'motivé', 'étudiant à CESI']; // Set the words to display
 }
 let wordIndex = 0; // Set the index of the word to 0
 let i = words[wordIndex].length; // Set the index of the letter to the length of the first word
