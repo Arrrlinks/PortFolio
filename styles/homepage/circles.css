@@ -1,0 +1,32 @@
+.circle, .circle-overlay {
+    transform-origin: center;
+    transition: transform 260ms ease-out;
+    position: fixed;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+}
+
+.circle {
+    background-color: var(--primary-color);
+    z-index: -1;
+}
+
+.circle-overlay {
+    background: #fff;
+    z-index: 2;
+    pointer-events: none;
+}
+
+@keyframes circleToDown {
+    from {
+        bottom: 130vh
+    }
+    to {
+        bottom: -25px;
+    }
+}

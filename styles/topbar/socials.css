@@ -1,0 +1,64 @@
+.socials {
+    font-family: "BBH Sans Bartle", sans-serif;
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    padding: 8px 205px 8px 15px;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    transition: 0.3s;
+    border: var(--primary-color-light) 4px solid;
+}
+
+.socials img {
+    width: 40px;
+    filter: invert(1);
+    transition: 0.3s;
+}
+
+.socials a {
+    position: absolute;
+    color: var(--text-color);
+    animation: slideUp 0.3s ease-out;
+    margin-left: 50px;
+    transition: 0.3s;
+}
+
+.socials a:not(:nth-child(2)) {
+    display: none;
+}
+
+.socials:hover {
+    background-color: var(--primary-color-light);
+    cursor: pointer;
+}
+
+.socials:hover a {
+    color: var(--secondary-color);
+}
+
+.socials:hover img {
+    filter: invert(0);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    from {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}

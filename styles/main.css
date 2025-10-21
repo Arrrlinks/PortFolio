@@ -1,0 +1,43 @@
+:root{
+    --background-color: #fff;
+    --text-color: #fff;
+    --primary-color: #6200ea;
+    --primary-color-dark : #3f009a;
+    --primary-color-light : #e8d9ff;
+    --secondary-color: #000;
+    --tertiary-color: #ffeb3b;
+    --quaternary-color: #ff8c00;
+    --fifth-color: #4caf50;
+    --sixth-color: #f44336;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+.project, .project-overlay {
+    position: relative;
+    margin: 100vh auto 0 auto;
+    width: 80vw;
+    min-width: 1200px;
+    height: 500vh;
+    rotate: 80deg;
+}
+
+.project {
+    background-color: #0073FF;
+    mix-blend-mode: normal;
+    isolation: isolate;
+    z-index: 3;
+}
+
+.project-overlay {
+    background: #fff;
+    opacity: 1;
+    z-index: 10;
+    mix-blend-mode: difference;
+    rotate: 0deg;
+    transform: translateY(-600vh) rotate(80deg);
+}

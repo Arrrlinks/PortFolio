@@ -1,0 +1,36 @@
+.name-container {
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    font-family: "BBH Sans Bartle", sans-serif;
+    color: var(--secondary-color);
+    font-size: 100px;
+    user-select: none;
+    margin-top: 40vh;
+}
+
+.name-container div:first-child{
+    padding-right: 250px;
+    margin-left: 50px;
+    opacity: 0;
+    animation: textAppear 1s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.name-container div:last-child{
+    padding-left: 480px;
+    opacity: 0;
+    animation: textAppear 1s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes textAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
