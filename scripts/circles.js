@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const circle = document.querySelector('.circle');
     const overlay = document.querySelector('.circle-overlay');
     if (circle) {
-        circle.style.animation = 'circleToDown 1s ease-out forwards';
+        circle.style.animation = 'circleToDown 1.2s ease forwards';
     }
     if (overlay) {
-        overlay.style.animation = 'circleToDown 1s ease-out forwards';
+        overlay.style.animation = 'circleToDown 1.2s ease forwards';
     }
 });
 
