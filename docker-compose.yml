@@ -4,8 +4,12 @@ services:
   web:
     build: .
     container_name: portfolio-v2
-    ports:
-      - "8080:80"
     volumes:
       - .:/usr/share/nginx/html:ro
     restart: unless-stopped
+    networks:
+      - caddy
+
+networks:
+  caddy:
+    external: true
