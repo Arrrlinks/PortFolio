@@ -1,24 +1,241 @@
-.project, .project-overlay {
+.projects-section {
+    padding: 64px 36px;
     position: relative;
-    margin: 100vh auto 0 auto;
-    width: 80vw;
-    min-width: 1200px;
-    height: 500vh;
-    rotate: 80deg;
-}
-
-.project {
-    background-color: #0073FF;
-    mix-blend-mode: normal;
-    isolation: isolate;
-    z-index: 3;
-}
-
-.project-overlay {
-    background: #fff;
-    opacity: 1;
+    color: var(--text-color);
+    font-family: 'Rubik', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     z-index: 10;
-    mix-blend-mode: difference;
-    rotate: 0deg;
-    transform: translateY(-600vh) rotate(80deg);
+}
+
+.projects-header {
+    position: sticky;
+    top: 72px; /* aligns under the topbar; tweak if your topbar height differs */
+    z-index: 30; /* sit above the scroller */
+    max-width: 1100px;
+    margin: 0 auto 12px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 6px 8px;
+    background: linear-gradient(180deg, rgba(10,12,20,0), rgba(10,12,20,0.02));
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    border-radius: 6px;
+}
+
+.projects-header h2 {
+    font-family: 'Funnel Display', Rubik, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    margin: 0;
+    font-size: 28px;
+    color: var(--text-color, #e9eef6);
+}
+
+.projects-intro {
+    color: rgba(255,255,255,0.78);
+    margin: 0;
+    font-size: 14px;
+    font-family: Rubik, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    opacity: 0.9;
+}
+
+.projects-wrapper {
+    /* make the scroller stick in viewport while the section provides vertical scroll space */
+    position: sticky;
+    top: 100px; /* adjust to account for topbar */
+    height: calc(100vh - 140px);
+    overflow: visible;
+    border-radius: 6px;
+}
+
+.projects-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    padding: 20px 80px;
+    will-change: transform;
+    transition: transform 0.2s linear;
+}
+
+.project-card {
+    flex: 0 0 320px; /* base width for each card */
+    height: 300px; /* reduced height */
+    border-radius: 8px; /* less rounded */
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(6, 8, 12, 0.28), rgba(6, 8, 12, 0.18));
+    box-shadow: 0 8px 24px rgba(4, 6, 12, 0.45);
+    display: flex;
+    align-items: stretch;
+    cursor: pointer;
+    transition: flex-basis 380ms cubic-bezier(.2, .9, .2, 1), transform 320ms, box-shadow 320ms;
+}
+
+/* Make the anchor fill the card */
+.project-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    vertical-align: middle;
+    filter: saturate(1.05) contrast(1.02) brightness(0.92);
+    transform-origin: center;
+    transition: transform 420ms ease;
+}
+
+.project-card.active .project-img {
+    transform: scale(1.06) translateY(-4px);
+}
+
+.project-info {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    color: #fff;
+    z-index: 4;
+    padding: 10px 12px;
+    border-radius: 6px;
+    background: linear-gradient(180deg, rgba(10, 10, 12, 0.55), rgba(10, 10, 12, 0.25));
+    backdrop-filter: blur(6px) saturate(1.1);
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.02);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 60%;
+    overflow: hidden;
+    transition: max-height 260ms, opacity 200ms;
+}
+
+.project-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.project-meta {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 12px;
+}
+
+.project-desc {
+    color: rgba(230, 235, 245, 0.95);
+    font-size: 13px;
+    display: none;
+}
+
+/* Active / centered card styles: increase width and reveal description */
+.project-card.active {
+    flex-basis: 520px; /* wider when active */
+    transform: translateY(-6px);
+    z-index: 6;
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.5);
+}
+
+.project-card.active .project-desc {
+    display: block;
+    opacity: 1;
+}
+
+.project-card.active .project-info {
+    max-height: 80%;
+}
+
+/* When not active, minimal overlay (just title/meta) */
+.project-card:not(.active) .project-info {
+    max-height: 46px;
+}
+
+/* Slight decorative stripe under header */
+.projects-header {
+    /* preserve relative positioning for decorative stripe when not sticky */
+    position: relative;
+}
+
+.projects-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -12px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 120, 120, 0.04), rgba(120, 180, 255, 0.04));
+}
+
+/* When JS toggles this class the header will become fixed above the projects scroller */
+.projects-header--fixed {
+  position: fixed !important;
+  top: 72px !important; /* same offset used elsewhere */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 80 !important;
+  width: calc(100% - 72px);
+  max-width: 1100px;
+  background: linear-gradient(180deg, rgba(10,12,20,0.02), rgba(10,12,20,0.04));
+  box-shadow: 0 8px 24px rgba(2,4,8,0.35);
+}
+
+/* responsive */
+@media (max-width: 900px) {
+    .projects-wrapper {
+        top: 80px;
+        height: calc(100vh - 120px);
+    }
+
+    .project-card {
+        height: 280px;
+        flex-basis: 260px;
+    }
+
+    .project-card.active {
+        flex-basis: 420px;
+    }
+}
+
+@media (max-width: 520px) {
+    .projects-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .projects-wrapper {
+        top: 70px;
+        height: calc(100vh - 94px);
+    }
+
+    .project-card {
+        flex-basis: 210px;
+        height: 240px;
+    }
+
+    .project-card.active {
+        flex-basis: 340px;
+    }
+}
+
+/* fallback view transition fade */
+.view-transition-fallback * {
+    transition: opacity 220ms ease-in;
+    opacity: 0.01 !important;
+}
+
+/* small focus outline for keyboard navigation */
+.project-card:focus-within {
+    outline: 3px solid rgba(255, 255, 255, 0.06);
 }

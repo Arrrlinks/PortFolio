@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="styles/homepage/name.css">
     <!-- About section styles -->
     <link rel="stylesheet" href="styles/about/about.css">
+    <!-- Projects styles -->
+    <link rel="stylesheet" href="styles/projects/projects.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,15 +54,125 @@
     </div>
     <div class="text">
         <h2 class="hidden">Hi !
-            <div class="line hidden"></div>
+            <span class="line hidden" aria-hidden="true"></span>
             <br> I'm <span class="antoine">Antoine</span>
-            <div class="line2 hidden"></div>
+            <span class="line2 hidden" aria-hidden="true"></span>
         </h2>
         <p class="text-p hidden">I am a final-year computer engineering student (Bac+5), passionate about AI, robotics, and
             their applications in the medical field. I enjoy coding, exploring new tools, and constantly learning to
             take on new challenges.</p>
     </div>
 </div>
+
+<section class="projects-section" id="projects">
+    <header class="projects-header">
+        <h2>Projects</h2>
+        <p class="projects-intro">Scroll to explore — projects scroll horizontally. Click to open (View Transition supported).</p>
+    </header>
+
+    <div class="projects-wrapper">
+        <div class="projects-list" role="list">
+            <article class="project-card" role="listitem">
+                <a class="project-link" href="./projects/project1.html" aria-label="Open Project 1">
+                  <img class="project-img" src="imgs/pfp.png" alt="Project 1 image">
+                  <div class="project-info">
+                      <h3 class="project-title">Project 1</h3>
+                      <p class="project-desc">Short description of project 1. Click to open the project page with a smooth transition.</p>
+                      <div class="project-meta">JS · AI · Demo</div>
+                  </div>
+                </a>
+             </article>
+
+             <article class="project-card" role="listitem">
+                <a class="project-link" href="./projects/project2.html" aria-label="Open Project 2">
+                  <img class="project-img" src="imgs/pfp.png" alt="Project 2 image">
+                  <div class="project-info">
+                      <h3 class="project-title">Project 2</h3>
+                      <p class="project-desc">Short description of project 2. Add more details here when active.</p>
+                      <div class="project-meta">Python · Robotics</div>
+                  </div>
+                </a>
+             </article>
+
+             <article class="project-card" role="listitem">
+                <a class="project-link" href="./projects/project3.html" aria-label="Open Project 3">
+                  <img class="project-img" src="imgs/pfp.png" alt="Project 3 image">
+                  <div class="project-info">
+                      <h3 class="project-title">Project 3</h3>
+                      <p class="project-desc">Short description of project 3.</p>
+                      <div class="project-meta">C++ · Embedded</div>
+                  </div>
+                </a>
+             </article>
+
+            <article class="project-card" role="listitem">
+                <a class="project-link" href="./projects/project3.html" aria-label="Open Project 3">
+                    <img class="project-img" src="imgs/pfp.png" alt="Project 3 image">
+                    <div class="project-info">
+                        <h3 class="project-title">Project 3</h3>
+                        <p class="project-desc">Short description of project 3.</p>
+                        <div class="project-meta">C++ · Embedded</div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card" role="listitem">
+                <a class="project-link" href="./projects/project3.html" aria-label="Open Project 3">
+                    <img class="project-img" src="imgs/pfp.png" alt="Project 3 image">
+                    <div class="project-info">
+                        <h3 class="project-title">Project 3</h3>
+                        <p class="project-desc">Short description of project 3.</p>
+                        <div class="project-meta">C++ · Embedded</div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card" role="listitem">
+                <a class="project-link" href="./projects/project3.html" aria-label="Open Project 3">
+                    <img class="project-img" src="imgs/pfp.png" alt="Project 3 image">
+                    <div class="project-info">
+                        <h3 class="project-title">Project 3</h3>
+                        <p class="project-desc">Short description of project 3.</p>
+                        <div class="project-meta">C++ · Embedded</div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card" role="listitem">
+                <a class="project-link" href="./projects/project3.html" aria-label="Open Project 3">
+                    <img class="project-img" src="imgs/pfp.png" alt="Project 3 image">
+                    <div class="project-info">
+                        <h3 class="project-title">Project 3</h3>
+                        <p class="project-desc">Short description of project 3.</p>
+                        <div class="project-meta">C++ · Embedded</div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card" role="listitem">
+                <a class="project-link" href="./projects/project3.html" aria-label="Open Project 3">
+                    <img class="project-img" src="imgs/pfp.png" alt="Project 3 image">
+                    <div class="project-info">
+                        <h3 class="project-title">Project 3</h3>
+                        <p class="project-desc">Short description of project 3.</p>
+                        <div class="project-meta">C++ · Embedded</div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Add more project-card blocks as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- Placeholder sections to resolve topbar anchors -->
+<section id="experience" class="experience" aria-label="Experience">
+  <div style="padding:40px; text-align:center; color:#999;">Experience section (placeholder)</div>
+</section>
+
+<section id="contact" class="contact-section" aria-label="Contact">
+  <div style="padding:40px; text-align:center; color:#999;">Contact section (placeholder)</div>
+</section>
 
 <div class="project"></div>
 
@@ -69,6 +181,7 @@
 <script src="scripts/name.js"></script>
 <script src="scripts/circles.js"></script>
 <script src="scripts/about.js"></script>
+<script src="scripts/projects.js"></script>
 <!-- script src="scripts/projects-background.js"></script -->
 </body>
 </html>

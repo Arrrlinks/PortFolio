@@ -2,7 +2,7 @@
     position: relative;
     isolation: isolate;
     z-index: 3;
-    margin: 80vh auto 100vh auto;
+    margin: 80vh auto 0 auto;
     max-width: 80vw;
     height: 100vh;
     border-radius: 15px;
