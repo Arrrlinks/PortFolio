@@ -92,19 +92,9 @@
     <div style="padding:40px; text-align:center; color:#999;">Contact section (placeholder)</div>
 </section>
 
-<script src="scripts/main.js"></script>
-<script src="scripts/socials.js"></script>
-<script src="scripts/name.js"></script>
-<script src="scripts/circles.js"></script>
-<script src="scripts/about.js"></script>
-<script src="scripts/projects.js"></script>
-<!-- script src="scripts/projects-background.js"></script -->
-
 <div id="chatbot" aria-live="polite">
     <button id="chatbot-toggle" class="chatbot-toggle" aria-label="Open chat">
-        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-            <path fill="currentColor" d="M20 2H4a2 2 0 0 0-2 2v14l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"></path>
-        </svg>
+        💬
     </button>
 
     <div class="chatbot-panel" role="dialog" aria-label="Chatbot dialog" aria-hidden="true">
@@ -116,11 +106,19 @@
         <form id="chatbot-form" class="chatbot-form">
             <label for="chatbot-input" class="visually-hidden">Message</label>
             <input id="chatbot-input" name="message" placeholder="Ask me something..." autocomplete="off" required/>
-            <button type="submit" class="chatbot-send" aria-label="Send message">→</button>
+            <button type="submit" class="chatbot-send" aria-label="Send message"><img class="send-icon" src="imgs/send.svg" alt=">"></button>
         </form>
     </div>
 </div>
 
 <script src="scripts/chatbot.js"></script>
+
+<script src="scripts/main.js"></script>
+<script src="scripts/socials.js"></script>
+<script src="scripts/name.js"></script>
+<script src="scripts/circles.js"></script>
+<script src="scripts/about.js"></script>
+<script src="scripts/projects.js"></script>
+<!-- script src="scripts/projects-background.js"></script -->
 </body>
 </html>

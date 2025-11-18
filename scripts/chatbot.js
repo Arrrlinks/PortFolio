@@ -10,12 +10,11 @@
 
   const WEBHOOK_URL = 'https://n8n.antoinef.fr/webhook/antoinef-chatbot';
 
-  const MAX_HISTORY = 8; // number of recent messages to send with each request
-  let conversation = []; // stores { role: 'user'|'bot', text: '...' }
+  const MAX_HISTORY = 8;
+  let conversation = [];
 
   function setOpen(open){
     root.setAttribute('aria-hidden', String(!open));
-    // toggle aria-hidden on panel for accessibility
     panel.setAttribute('aria-hidden', String(!open));
     if(open){
       input.focus();
@@ -25,19 +24,15 @@
   toggle.addEventListener('click', ()=> setOpen(true));
   closeBtn.addEventListener('click', ()=> setOpen(false));
 
-  // Basic utility to append messages
   function appendMessage(text, who='bot', opts={}){
     const el = document.createElement('div');
     el.className = 'message ' + who + (opts.new? ' new':'');
     el.textContent = text;
     messages.appendChild(el);
-    // keep scroll at bottom
     messages.scrollTop = messages.scrollHeight;
 
-    // add to in-memory history unless explicitly skipped (typing, system)
     if(!opts.skipHistory && (who === 'user' || who === 'bot')){
       conversation.push({ role: who, text });
-      // keep conversation from growing indefinitely
       if(conversation.length > 200) conversation.shift();
     }
 
@@ -47,24 +42,19 @@
   function showTyping(){
     const el = document.createElement('div');
     el.className = 'message bot typing';
-    el.textContent = 'Antoine is typing...';
+    el.textContent = '4nt0ine is typing...';
     messages.appendChild(el);
     messages.scrollTop = messages.scrollHeight;
     return el;
   }
 
   async function sendMessage(text){
-    // render user message
     appendMessage(text, 'user');
     input.value = '';
-    // show typing indicator
     const typingEl = showTyping();
 
     try{
-      // prepare history (last N messages)
       const recent = JSON.stringify(conversation.slice(-MAX_HISTORY));
-
-      // Send message as application/x-www-form-urlencoded for simple webhook
       const params = new URLSearchParams();
       params.append('message', text);
       params.append('history', JSON.stringify(recent));
@@ -74,7 +64,6 @@
         headers: { 'Accept': 'application/json' }
       });
 
-      // remove typing
       typingEl.remove();
 
       if(!res.ok){
@@ -99,14 +88,12 @@
     sendMessage(v);
   });
 
-  // Allow toggling by clicking outside panel when open
   document.addEventListener('click', (ev)=>{
     if(!root.contains(ev.target) && root.getAttribute('aria-hidden') === 'false'){
       setOpen(false);
     }
   });
 
-  // keyboard accessibility: Esc closes
   document.addEventListener('keydown', (ev)=>{
     if(ev.key === 'Escape' && root.getAttribute('aria-hidden') === 'false'){
       setOpen(false);
@@ -114,17 +101,16 @@
     }
   });
 
-  // initial state
   root.setAttribute('aria-hidden', 'true');
   panel.setAttribute('aria-hidden', 'true');
 
-  // small welcome message
   setTimeout(()=>{
     appendMessage('Hello! I\'m 4nt0ine, I\'m a chatbot made to answer your questions, ask me about my projects, experience, or how I built this site.', 'bot');
   }, 700);
 
 })();
 
+//TODO: Format messages better (markdown, code blocks, links, etc.)
 function formatData(data){
   if(typeof data === 'string'){
     return data.replace(/(\*\*|__)(.*?)\1/g, '$2') // bold
