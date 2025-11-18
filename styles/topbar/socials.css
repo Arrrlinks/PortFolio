@@ -2,7 +2,7 @@
     font-family: "BBH Sans Bartle", sans-serif;
     background-color: var(--primary-color);
     border-radius: 50px;
-    padding: 8px 205px 8px 15px;
+    padding: 8px 180px 8px 15px;
     display: flex;
     align-items: center;
     height: 30px;
@@ -81,10 +81,10 @@
 
 @keyframes center {
     0% {
-        padding-right: 205px;
+        padding-right: 180px;
     }
     100% {
-        margin-left: 102px;
+        margin-left: 80px;
         padding-right: 15px;
     }
 }
@@ -104,71 +104,63 @@
 
 @keyframes uncenter {
     0% {
-        margin-left: 102px;
+        margin-left: 80px;
         padding-right: 15px;
     }
     100% {
         margin-left: 0;
-        padding-right: 205px;
+        padding-right: 180px;
     }
 }
 
 @keyframes showLinkedin{
     0% {
-        left: 135px;
+        left: 110px;
         z-index: -1;
     }
     99% {
-        left: 230px;
+        left: 200px;
         z-index: -1;
     }
     100% {
-        left: 230px;
+        left: 200px;
         z-index: 1;
     }
 }
 
 @keyframes showGithub{
     0% {
-        left: 135px;
+        left: 110px;
         z-index: -1;
     }
     99% {
-        left: 40px;
+        left: 25px;
         z-index: -1;
     }
     100% {
-        left: 40px;
+        left: 25px;
         z-index: 1;
     }
 }
 
 @keyframes hideLinkedin{
     0% {
-        left: 230px;
-        z-index: -1;
-    }
-    99% {
-        left: 135px;
+        left: 200px;
         z-index: -1;
     }
     100% {
-        left: 135px;
+        left: 110px;
         z-index: -1;
     }
 }
 
 @keyframes hideGithub{
     0% {
-        left: 40px;
-        z-index: -1;
-    }
-    99% {
-        left: 135px;
+        left: 25px;
         z-index: -1;
     }
     100% {
-        left: 135px;
+        left: 110px;
         z-index: -1;
     }
 }
