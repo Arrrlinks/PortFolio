@@ -1,26 +1,31 @@
 const socialsDiv = document.querySelector('.socials');
-const socialsLinks = socialsDiv.querySelectorAll('a');
-let current = 0;
-socialsLinks.forEach((a, i) => {
-    a.style.display = i === 0 ? 'block' : 'none';
-    a.style.position = 'absolute';
-    a.style.zIndex = i === 0 ? '2' : '1';
-});
+const socialsSpan = document.querySelector('.socials span');
+
+const linkedinSocial = document.getElementById('linkedin');
+const githubSocial = document.getElementById('github');
+
+let isClicked = false;
 
 socialsDiv.onclick = () => {
-    window.open(socialsLinks[current].href, '_blank');
+    if (!isClicked) {
+        isClicked = true;
+        socialsSpan.style.animation = 'disappear 0.3s forwards';
+        socialsDiv.style.animation = 'center 0.3s forwards';
+        linkedinSocial.style.animation = 'showLinkedin 0.3s forwards';
+        githubSocial.style.animation = 'showGithub 0.3s forwards';
+    } else {
+        isClicked = false;
+        socialsSpan.style.animation = 'appear 0.3s forwards';
+        socialsDiv.style.animation = 'uncenter 0.3s forwards';
+        linkedinSocial.style.animation = 'hideLinkedin 0.3s forwards';
+        githubSocial.style.animation = 'hideGithub 0.3s forwards';
+    }
 };
 
-setInterval(() => {
-    socialsLinks[current].style.animation = 'disappear 0.3s ease-out';
-    setTimeout(() => {
-        socialsLinks[current].style.display = 'none';
-        socialsLinks[current].style.animation = '';
-        socialsLinks[current].style.zIndex = '1';
+linkedinSocial.onclick = () => {
+    window.open('https://www.linkedin.com/in/antoinefaure01', '_blank');
+}
 
-        current = (current + 1) % socialsLinks.length;
-        socialsLinks[current].style.display = 'block';
-        socialsLinks[current].style.animation = 'slideUp 0.5s ease-out';
-        socialsLinks[current].style.zIndex = '2';
-    }, 300);
-}, 6000);
+githubSocial.onclick = () => {
+    window.open('https://github.com/Arrrlinks', '_blank');
+}

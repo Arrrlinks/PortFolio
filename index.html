@@ -30,8 +30,13 @@
 <div class="topbar">
     <div class="socials">
         <img src="imgs/eyes.gif" alt="→">
-        <a href="https://github.com/Arrrlinks" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/-antoinef/" target="_blank">Linkedin</a>
+        <span>Socials</span>
+    </div>
+    <div class="social-icons" id="github">
+        <img src="imgs/github.svg" alt="github.svg" class="social-icon" >
+    </div>
+    <div class="social-icons" id="linkedin">
+        <img src="imgs/linkedin.svg" alt="linkedin.svg" class="social-icon">
     </div>
     <div class="menu">
         <a href="#about">About me</a>
@@ -60,7 +65,8 @@
             <br> I'm <span class="antoine">Antoine</span>
             <span class="line2 hidden" aria-hidden="true"></span>
         </h2>
-        <p class="text-p hidden">I am a final-year computer engineering student (Bac+5), passionate about AI, robotics, and
+        <p class="text-p hidden">I am a final-year computer engineering student (Bac+5), passionate about AI, robotics,
+            and
             their applications in the medical field. I enjoy coding, exploring new tools, and constantly learning to
             take on new challenges.</p>
     </div>
@@ -69,7 +75,8 @@
 <section class="projects-section" id="projects">
     <header class="projects-header">
         <h2>Projects</h2>
-        <p class="projects-intro">Scroll to explore — projects scroll horizontally. Click to open (View Transition supported).</p>
+        <p class="projects-intro">Scroll to explore — projects scroll horizontally. Click to open (View Transition
+            supported).</p>
     </header>
 
     <div class="projects-wrapper">
@@ -78,11 +85,11 @@
 </section>
 
 <section id="experience" class="experience" aria-label="Experience">
-  <div style="padding:40px; text-align:center; color:#999;">Experience section (placeholder)</div>
+    <div style="padding:40px; text-align:center; color:#999;">Experience section (placeholder)</div>
 </section>
 
 <section id="contact" class="contact-section" aria-label="Contact">
-  <div style="padding:40px; text-align:center; color:#999;">Contact section (placeholder)</div>
+    <div style="padding:40px; text-align:center; color:#999;">Contact section (placeholder)</div>
 </section>
 
 <script src="scripts/main.js"></script>
@@ -108,7 +115,7 @@
         <div class="chatbot-messages" id="chatbot-messages" role="log" aria-live="polite"></div>
         <form id="chatbot-form" class="chatbot-form">
             <label for="chatbot-input" class="visually-hidden">Message</label>
-            <input id="chatbot-input" name="message" placeholder="Ask me something..." autocomplete="off" required />
+            <input id="chatbot-input" name="message" placeholder="Ask me something..." autocomplete="off" required/>
             <button type="submit" class="chatbot-send" aria-label="Send message">→</button>
         </form>
     </div>
