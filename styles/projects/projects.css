@@ -59,13 +59,13 @@
     align-items: center;
     padding: 20px 80px;
     will-change: transform;
-    transition: transform 0.2s linear;
+    transition: transform 0.5s linear;
 }
 
 .project-card {
-    flex: 0 0 320px; /* base width for each card */
-    height: 300px; /* reduced height */
-    border-radius: 8px; /* less rounded */
+    flex: 0 0 320px;
+    height: 300px;
+    border-radius: 8px;
     overflow: hidden;
     background: linear-gradient(180deg, rgba(6, 8, 12, 0.28), rgba(6, 8, 12, 0.18));
     box-shadow: 0 8px 24px rgba(4, 6, 12, 0.45);
@@ -141,7 +141,7 @@
 
 /* Active / centered card styles: increase width and reveal description */
 .project-card.active {
-    flex-basis: 520px; /* wider when active */
+    flex-basis: 520px;
     transform: translateY(-6px);
     z-index: 6;
     box-shadow: 0 22px 48px rgba(0, 0, 0, 0.5);

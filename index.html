@@ -23,6 +23,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Bonheur+Royale&family=Coral+Pixels&family=Doto:wght,ROND@900,100&family=Frijole&family=Funnel+Display:wght@300..800&family=Galindo&family=Pixelify+Sans:wght@700&family=Rubik+Dirt&family=Rubik+Glitch&family=Rubik+Iso&family=Rubik+Pixels&display=swap"
           rel="stylesheet">
+    <!-- Chatbot styles -->
+    <link rel="stylesheet" href="styles/chatbot.css">
 </head>
 <body>
 <div class="topbar">
@@ -71,101 +73,10 @@
     </header>
 
     <div class="projects-wrapper">
-        <div class="projects-list" role="list">
-            <article class="project-card" role="listitem">
-                <a class="project-link" href="./projects/project1.html" aria-label="Open Project 1">
-                  <img class="project-img" src="imgs/pfp.png" alt="Project 1 image">
-                  <div class="project-info">
-                      <h3 class="project-title">Project 1</h3>
-                      <p class="project-desc">Short description of project 1. Click to open the project page with a smooth transition.</p>
-                      <div class="project-meta">JS · AI · Demo</div>
-                  </div>
-                </a>
-             </article>
-
-             <article class="project-card" role="listitem">
-                <a class="project-link" href="./projects/project2.html" aria-label="Open Project 2">
-                  <img class="project-img" src="imgs/pfp.png" alt="Project 2 image">
-                  <div class="project-info">
-                      <h3 class="project-title">Project 2</h3>
-                      <p class="project-desc">Short description of project 2. Add more details here when active.</p>
-                      <div class="project-meta">Python · Robotics</div>
-                  </div>
-                </a>
-             </article>
-
-             <article class="project-card" role="listitem">
-                <a class="project-link" href="./projects/project3.html" aria-label="Open Project 3">
-                  <img class="project-img" src="imgs/pfp.png" alt="Project 3 image">
-                  <div class="project-info">
-                      <h3 class="project-title">Project 3</h3>
-                      <p class="project-desc">Short description of project 3.</p>
-                      <div class="project-meta">C++ · Embedded</div>
-                  </div>
-                </a>
-             </article>
-
-            <article class="project-card" role="listitem">
-                <a class="project-link" href="./projects/project3.html" aria-label="Open Project 3">
-                    <img class="project-img" src="imgs/pfp.png" alt="Project 3 image">
-                    <div class="project-info">
-                        <h3 class="project-title">Project 3</h3>
-                        <p class="project-desc">Short description of project 3.</p>
-                        <div class="project-meta">C++ · Embedded</div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="project-card" role="listitem">
-                <a class="project-link" href="./projects/project3.html" aria-label="Open Project 3">
-                    <img class="project-img" src="imgs/pfp.png" alt="Project 3 image">
-                    <div class="project-info">
-                        <h3 class="project-title">Project 3</h3>
-                        <p class="project-desc">Short description of project 3.</p>
-                        <div class="project-meta">C++ · Embedded</div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="project-card" role="listitem">
-                <a class="project-link" href="./projects/project3.html" aria-label="Open Project 3">
-                    <img class="project-img" src="imgs/pfp.png" alt="Project 3 image">
-                    <div class="project-info">
-                        <h3 class="project-title">Project 3</h3>
-                        <p class="project-desc">Short description of project 3.</p>
-                        <div class="project-meta">C++ · Embedded</div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="project-card" role="listitem">
-                <a class="project-link" href="./projects/project3.html" aria-label="Open Project 3">
-                    <img class="project-img" src="imgs/pfp.png" alt="Project 3 image">
-                    <div class="project-info">
-                        <h3 class="project-title">Project 3</h3>
-                        <p class="project-desc">Short description of project 3.</p>
-                        <div class="project-meta">C++ · Embedded</div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="project-card" role="listitem">
-                <a class="project-link" href="./projects/project3.html" aria-label="Open Project 3">
-                    <img class="project-img" src="imgs/pfp.png" alt="Project 3 image">
-                    <div class="project-info">
-                        <h3 class="project-title">Project 3</h3>
-                        <p class="project-desc">Short description of project 3.</p>
-                        <div class="project-meta">C++ · Embedded</div>
-                    </div>
-                </a>
-            </article>
-
-            <!-- Add more project-card blocks as needed -->
-        </div>
+        <div class="projects-list" role="list" id="projects-container"></div>
     </div>
 </section>
 
-<!-- Placeholder sections to resolve topbar anchors -->
 <section id="experience" class="experience" aria-label="Experience">
   <div style="padding:40px; text-align:center; color:#999;">Experience section (placeholder)</div>
 </section>
@@ -174,8 +85,6 @@
   <div style="padding:40px; text-align:center; color:#999;">Contact section (placeholder)</div>
 </section>
 
-<div class="project"></div>
-
 <script src="scripts/main.js"></script>
 <script src="scripts/socials.js"></script>
 <script src="scripts/name.js"></script>
@@ -183,5 +92,28 @@
 <script src="scripts/about.js"></script>
 <script src="scripts/projects.js"></script>
 <!-- script src="scripts/projects-background.js"></script -->
+
+<div id="chatbot" aria-live="polite">
+    <button id="chatbot-toggle" class="chatbot-toggle" aria-label="Open chat">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path fill="currentColor" d="M20 2H4a2 2 0 0 0-2 2v14l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"></path>
+        </svg>
+    </button>
+
+    <div class="chatbot-panel" role="dialog" aria-label="Chatbot dialog" aria-hidden="true">
+        <div class="chatbot-header">
+            <div class="chatbot-title">4nt0ine (BETA)</div>
+            <button id="chatbot-close" class="chatbot-close" aria-label="Close chat">✕</button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages" role="log" aria-live="polite"></div>
+        <form id="chatbot-form" class="chatbot-form">
+            <label for="chatbot-input" class="visually-hidden">Message</label>
+            <input id="chatbot-input" name="message" placeholder="Ask me something..." autocomplete="off" required />
+            <button type="submit" class="chatbot-send" aria-label="Send message">→</button>
+        </form>
+    </div>
+</div>
+
+<script src="scripts/chatbot.js"></script>
 </body>
 </html>
