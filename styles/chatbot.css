@@ -21,23 +21,26 @@
     transition: .3s;
 }
 
+.chatbot-toggle img {
+    fill: white;
+    width: 35px;
+    filter: invert(1);
+    transition: .3s;
+}
+
 .chatbot-toggle:hover {
     background-color: var(--primary-color-light);
 }
 
-.chatbot-toggle:hover svg {
-    filter: invert(1);
+.chatbot-toggle:hover img {
+    filter: invert(0);
 }
 
 .chatbot-toggle:active {
     transform: scale(.98);
 }
 
-.chatbot-toggle img {
-    fill: white;
-    width: 40px;
-    filter: invert(1);
-}
+
 
 .chatbot-panel {
     position: absolute;
