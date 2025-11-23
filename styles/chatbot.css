@@ -109,6 +109,11 @@
     line-height: 1.3;
 }
 
+.message a {
+    color: var(--primary-color-light);
+    text-decoration: underline;
+}
+
 .message.user {
     background: var(--primary-color-light);
     align-self: flex-end;
