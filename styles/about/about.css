@@ -62,6 +62,8 @@
 
 .about .line, .about .line2 {
     position: relative;
+    display: inline-block;
+    vertical-align: middle;
     height: 18px;
     background-color: var(--primary-color-light);
     border-radius: 2px;
@@ -69,15 +71,17 @@
     margin-top: -10px;
     margin-left: -5px;
     z-index: -1;
+    transform-origin: left center; /* needed for scaleX animation */
 }
 
 .about .line {
     width: 200px;
     margin-bottom: -50px;
+    margin-left: -35%;
 }
 .about .line2 {
     width: 500px;
-    margin-top: -40px;
+    margin-top: -83px;
     margin-bottom: 50px;
 }
 
@@ -87,6 +91,7 @@
     text-align: justify;
     font-weight: 600;
     color: var(--text-color);
+    margin-top: -50px;
 }
 
 .hidden {
