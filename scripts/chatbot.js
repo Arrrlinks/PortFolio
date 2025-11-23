@@ -21,7 +21,12 @@
     }
   }
 
-  toggle.addEventListener('click', ()=> setOpen(true));
+  function toggleOpen() {
+    const isOpen = root.getAttribute('aria-hidden') === 'false';
+    setOpen(!isOpen);
+  }
+
+  toggle.addEventListener('click', ()=> toggleOpen());
   closeBtn.addEventListener('click', ()=> setOpen(false));
 
   function appendMessage(text, who='bot', opts={}){
