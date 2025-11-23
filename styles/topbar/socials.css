@@ -1,3 +1,10 @@
+:root {
+    --social-center: 110px;
+    --linkedin-shown-left: 200px;
+    --github-shown-left: 25px;
+}
+
+
 .socials {
     font-family: "BBH Sans Bartle", sans-serif;
     background-color: var(--primary-color);
@@ -35,7 +42,7 @@
     border: var(--primary-color-light) 4px solid;
     cursor: pointer;
     position: absolute;
-    left: 135px;
+    left: var(--social-center);
     z-index: -1;
 }
 
@@ -115,52 +122,52 @@
 
 @keyframes showLinkedin{
     0% {
-        left: 110px;
+        left: var(--social-center);
         z-index: -1;
     }
     99% {
-        left: 200px;
+        left: var(--linkedin-shown-left);
         z-index: -1;
     }
     100% {
-        left: 200px;
+        left: var(--linkedin-shown-left);
         z-index: 1;
     }
 }
 
 @keyframes showGithub{
     0% {
-        left: 110px;
+        left: var(--social-center);
         z-index: -1;
     }
     99% {
-        left: 25px;
+        left: var(--github-shown-left);
         z-index: -1;
     }
     100% {
-        left: 25px;
+        left: var(--github-shown-left);
         z-index: 1;
     }
 }
 
 @keyframes hideLinkedin{
     0% {
-        left: 200px;
+        left: var(--linkedin-shown-left);
         z-index: -1;
     }
     100% {
-        left: 110px;
+        left: var(--social-center);
         z-index: -1;
     }
 }
 
 @keyframes hideGithub{
     0% {
-        left: 25px;
+        left: var(--github-shown-left);
         z-index: -1;
     }
     100% {
-        left: 110px;
+        left: var(--social-center);
         z-index: -1;
     }
 }
