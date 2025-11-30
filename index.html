@@ -57,7 +57,7 @@
     <div class="photo">
         <div class="photo-circle"></div>
         <div class="photo-circle2"></div>
-        <img src="imgs/pfp.png" alt="">
+        <img src="imgs/placeholder.png" alt="">
     </div>
     <div class="text">
         <h2 class="hidden">Hi !
@@ -74,15 +74,27 @@
 
 <section class="projects-section" id="projects">
     <header class="projects-header">
-        <h2>Projects</h2>
-        <p class="projects-intro">Scroll to explore — projects scroll horizontally. Click to open (View Transition
-            supported).</p>
+        <h2>My Projects</h2>
     </header>
 
-    <div class="projects-wrapper">
-        <div class="projects-list" role="list" id="projects-container"></div>
-    </div>
+    <div class="projects-grid" id="projects-container" role="list"></div>
 </section>
+
+<div id="project-modal" class="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div id="project-modal-backdrop" class="project-modal-backdrop" tabindex="-1"></div>
+    <div class="project-modal-content" role="document">
+        <button id="project-modal-close" class="project-modal-close" aria-label="Close project details">✕</button>
+        <div class="project-modal-body">
+            <img id="project-modal-img" class="project-modal-img" src="" alt="">
+            <div class="project-modal-info">
+                <h3 id="project-modal-title"></h3>
+                <p id="project-modal-desc"></p>
+                <div id="project-modal-skills" class="project-modal-skills"></div>
+                <a id="project-modal-link" class="project-modal-link" href="#" target="_blank" rel="noopener">Open project 🠊</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <section id="experience" class="experience" aria-label="Experience">
     <div style="padding:40px; text-align:center; color:#999;">Experience section (placeholder)</div>
