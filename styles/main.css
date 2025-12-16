@@ -34,6 +34,14 @@ body {
     user-select: none;
     -webkit-user-drag: none;
     image-rendering: pixelated; /* optional for pixel-art look */
+    cursor: pointer; /* indicate it's clickable */
+    transition: transform 140ms ease, opacity 160ms ease;
+    will-change: transform, opacity;
+}
+
+#floating-cat.cat-swap-anim {
+    transform: scale(0.95);
+    opacity: 0.9;
 }
 
 /* Smaller on very small screens */
