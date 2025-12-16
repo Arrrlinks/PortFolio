@@ -21,3 +21,26 @@ body {
     background-color: var(--background-color);
     overflow-x: hidden;
 }
+
+#floating-cat {
+    position: fixed;
+    left: 16px;
+    bottom: 0;
+    z-index: 99999;
+    width: 64px;
+    height: auto;
+    max-width: 25vw;
+    pointer-events: auto; /* set to 'none' if you want clicks to pass through */
+    user-select: none;
+    -webkit-user-drag: none;
+    image-rendering: pixelated; /* optional for pixel-art look */
+}
+
+/* Smaller on very small screens */
+@media (max-width: 420px) {
+    #floating-cat {
+        width: 32px;
+        left: 12px;
+        bottom: 0;
+    }
+}
