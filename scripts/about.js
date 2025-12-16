@@ -17,10 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     title.classList.add("fade-in");
 
                     setTimeout(() => {
+                        lines[0].classList.remove("hidden");
                         lines[0].classList.add("grow-left-to-right");
                     }, 500);
 
                     setTimeout(() => {
+                        lines[1].classList.remove("hidden");
                         lines[1].classList.add("grow-left-to-right");
                     }, 800);
 

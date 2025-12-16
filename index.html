@@ -72,36 +72,23 @@
     </div>
 </div>
 
-<section class="projects-section" id="projects">
-    <header class="projects-header">
-        <h2>My Projects</h2>
-    </header>
-
-    <div class="projects-grid" id="projects-container" role="list"></div>
-</section>
-
-<div id="project-modal" class="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div id="project-modal-backdrop" class="project-modal-backdrop" tabindex="-1"></div>
-    <div class="project-modal-content" role="document">
-        <button id="project-modal-close" class="project-modal-close" aria-label="Close project details">✕</button>
-        <div class="project-modal-body">
-            <img id="project-modal-img" class="project-modal-img" src="" alt="">
-            <div class="project-modal-info">
-                <h3 id="project-modal-title"></h3>
-                <p id="project-modal-desc"></p>
-                <div id="project-modal-skills" class="project-modal-skills"></div>
-                <a id="project-modal-link" class="project-modal-link" href="#" target="_blank" rel="noopener">View project 🠊</a>
+<section id="projects" class="projects-section" aria-labelledby="projects-title">
+    <div class="projects-inner">
+        <div class="projects-header">
+            <h2 id="projects-title" class="projects-title">My Projects</h2>
+            <div class="projects-controls">
+                <button id="projects-refresh" class="projects-refresh" aria-label="Shuffle featured projects">Shuffle</button>
             </div>
         </div>
+
+        <div id="projects-showcase" class="projects-showcase" aria-live="polite">
+            <!-- Project cards are injected by scripts/projects.js -->
+        </div>
+
+        <div class="projects-footer">
+            <a href="#" id="projects-more" class="projects-more">View more on GitHub ⟶</a>
+        </div>
     </div>
-</div>
-
-<section id="experience" class="experience" aria-label="Experience">
-    <div style="padding:40px; text-align:center; color:#999;">Experience section (placeholder)</div>
-</section>
-
-<section id="contact" class="contact-section" aria-label="Contact">
-    <div style="padding:40px; text-align:center; color:#999;">Contact section (placeholder)</div>
 </section>
 
 <div id="chatbot" aria-live="polite">
@@ -132,6 +119,9 @@
 <script src="scripts/name.js"></script>
 <script src="scripts/circles.js"></script>
 <script src="scripts/about.js"></script>
-<!-- script src="scripts/projects-background.js"></script -->
+<!-- Projects script loader (module) -->
+<script type="module" src="scripts/projects-loader.js"></script>
+<!-- Projects script -->
+<script src="scripts/projects.js"></script>
 </body>
 </html>
