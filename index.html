@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="styles/about/about.css">
     <!-- Projects styles -->
     <link rel="stylesheet" href="styles/projects/projects.css">
+    <!-- Experience styles -->
+    <link rel="stylesheet" href="styles/experience/experience.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,6 +93,16 @@
     </div>
 </section>
 
+<section id="experience" class="experience-section" aria-labelledby="experience-title">
+    <div class="experience-inner">
+        <h2 id="experience-title" class="experience-title">Experience</h2>
+        <div class="timeline" id="timeline">
+            <!-- Items injected by scripts/experience.js -->
+            <div class="timeline-bar" id="timeline-bar"></div>
+        </div>
+    </div>
+</section>
+
 <div id="chatbot" aria-live="polite">
     <button id="chatbot-toggle" class="chatbot-toggle" aria-label="Open chat">
         <img src="./imgs/bot.svg" alt="💬">
@@ -123,5 +135,8 @@
 <script type="module" src="scripts/projects-loader.js"></script>
 <!-- Projects script -->
 <script src="scripts/projects.js"></script>
+<!-- Experiences data + script -->
+<script src="experiences-list.js"></script>
+<script src="scripts/experience.js"></script>
 </body>
 </html>
