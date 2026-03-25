@@ -1,14 +1,5 @@
 const EXPERIENCES = [
     {
-        title: "IGE",
-        type: "Internship",
-        company: "INRS",
-        location: "Nancy, France",
-        description: "Development of an AI model of a sensor network to prevent, predict, alert, and locate aerosol emissions in a factory in order to protect its operators",
-        startDate: "Feb. 2026",
-        endDate: "Aug. 2026"
-    },
-    {
         title: "Master's Degree in Computer Science",
         type: "School",
         company: "CESI Engineering School",
@@ -16,6 +7,15 @@ const EXPERIENCES = [
         description: "",
         startDate: "2021",
         endDate: "2026"
+    },
+    {
+        title: "IGE",
+        type: "Internship",
+        company: "INRS",
+        location: "Nancy, France",
+        description: "Development of an AI model of a sensor network to prevent, predict, alert, and locate aerosol emissions in a factory in order to protect its operators",
+        startDate: "Feb. 2026",
+        endDate: "Aug. 2026"
     },
     {
         title: "Design of optometric calculation tools",

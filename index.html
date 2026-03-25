@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="styles/projects/projects.css">
     <!-- Experience styles -->
     <link rel="stylesheet" href="styles/experience/experience.css">
+    <!-- Contact styles -->
+    <link rel="stylesheet" href="styles/contact/contact.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,7 +86,6 @@
         </div>
 
         <div id="projects-showcase" class="projects-showcase" aria-live="polite">
-            <!-- Project cards are injected by scripts/projects.js -->
         </div>
 
         <div class="projects-footer">
@@ -97,9 +98,48 @@
     <div class="experience-inner">
         <h2 id="experience-title" class="experience-title">Experience</h2>
         <div class="timeline" id="timeline">
-            <!-- Items injected by scripts/experience.js -->
             <div class="timeline-bar" id="timeline-bar"></div>
         </div>
+    </div>
+</section>
+
+<section id="contact" class="contact-section" aria-labelledby="contact-title">
+    <div class="contact-inner">
+        <h2 id="contact-title" class="contact-title">Contact Me</h2>
+
+        <form id="contact-form" class="contact-form" novalidate>
+            <div class="contact-grid">
+                <div class="contact-field">
+                    <label for="first-name">First Name *</label>
+                    <input id="first-name" name="firstName" type="text" autocomplete="given-name" required>
+                </div>
+
+                <div class="contact-field">
+                    <label for="last-name">Last Name *</label>
+                    <input id="last-name" name="lastName" type="text" autocomplete="family-name" required>
+                </div>
+
+                <div class="contact-field contact-field-full">
+                    <label for="email">Email *</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required>
+                </div>
+
+                <div class="contact-field contact-field-full">
+                    <label for="who-are-you">Who are you</label>
+                    <input id="who-are-you" name="whoAreYou" type="text" autocomplete="organization-title">
+                </div>
+
+                <div class="contact-field contact-field-full">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+            </div>
+
+            <div class="contact-actions">
+                <button type="submit" id="contact-submit" class="contact-submit">SEND</button>
+                <p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
+            </div>
+        </form>
     </div>
 </section>
 
@@ -131,12 +171,10 @@
 <script src="scripts/name.js"></script>
 <script src="scripts/circles.js"></script>
 <script src="scripts/about.js"></script>
-<!-- Projects script loader (module) -->
 <script type="module" src="scripts/projects-loader.js"></script>
-<!-- Projects script -->
 <script src="scripts/projects.js"></script>
-<!-- Experiences data + script -->
 <script src="experiences-list.js"></script>
 <script src="scripts/experience.js"></script>
+<script src="scripts/contact.js"></script>
 </body>
 </html>
