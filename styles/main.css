@@ -45,7 +45,29 @@ body {
     opacity: 0.9;
 }
 
-/* Smaller on very small screens */
+.copyright {
+    position: absolute;
+    left: 50%;
+    bottom: 1.15rem;
+    transform: translateX(-50%);
+    margin: 0;
+    font-family: 'Funnel Display', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.58);
+    white-space: nowrap;
+}
+
+
+@media (max-width: 760px) {
+    .copyright {
+        bottom: 0.95rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.05em;
+    }
+}
+
 @media (max-width: 420px) {
     #floating-cat {
         width: 32px;
@@ -53,3 +75,4 @@ body {
         bottom: 0;
     }
 }
+

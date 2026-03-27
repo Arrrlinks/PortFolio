@@ -21,16 +21,6 @@
     position: relative;
 }
 
-.experience-title::after {
-    content: '';
-    display: block;
-    width: 56px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.45);
-    border-radius: 2px;
-    margin: 0.55rem auto 0;
-}
-
 .timeline {
     position: relative;
     padding: 10px 0 50px;
@@ -209,3 +199,4 @@
         font-size: 1.7rem;
     }
 }
+
