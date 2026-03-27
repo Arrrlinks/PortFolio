@@ -37,6 +37,11 @@
 
     // Main: attach handler
     document.addEventListener('DOMContentLoaded', () => {
+        const yearNode = document.getElementById('copyright-year');
+        if (yearNode) {
+            yearNode.textContent = String(new Date().getFullYear());
+        }
+
         const cat = document.getElementById('floating-cat');
         if (!cat) return;
 
