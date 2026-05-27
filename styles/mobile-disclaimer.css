@@ -1,0 +1,101 @@
+.mobile-disclaimer {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100svh;
+    min-height: 100svh;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-dark) 100%);
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: clamp(0.75rem, 3vw, 1.5rem);
+    text-align: center;
+    font-family: 'Funnel Display', sans-serif;
+    opacity: 1;
+    pointer-events: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.mobile-disclaimer.hidden {
+    display: none;
+    pointer-events: none;
+}
+
+.mobile-disclaimer-content {
+    width: min(90%, 420px);
+    max-height: calc(100svh - 2rem);
+    color: white;
+    animation: slideUp 0.4s ease-out;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding-bottom: 0.25rem;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobile-disclaimer-title {
+    font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+    font-weight: 800;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: 0.05em;
+}
+
+.mobile-disclaimer-text {
+    font-size: clamp(0.78rem, 3.4vw, 0.95rem);
+    margin: 0 0 1.1rem 0;
+    line-height: 1.45;
+    opacity: 0.95;
+    letter-spacing: 0.03em;
+}
+
+.mobile-disclaimer-highlight {
+    font-weight: 700;
+    color: var(--tertiary-color);
+}
+
+.mobile-disclaimer-button {
+    background-color: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 0.55rem 1.35rem;
+    font-size: clamp(0.75rem, 3.4vw, 0.9rem);
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'BBH Sans Bartle', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-disclaimer-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 1000px) {
+    .mobile-disclaimer {
+        display: none !important;
+        pointer-events: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    html,body {
+        overflow: hidden;
+    }
+}

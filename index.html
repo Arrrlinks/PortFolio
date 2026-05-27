@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="styles/experience/experience.css">
     <!-- Contact styles -->
     <link rel="stylesheet" href="styles/contact/contact.css">
+    <!-- Mobile Disclaimer styles -->
+    <link rel="stylesheet" href="styles/mobile-disclaimer.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +33,19 @@
     <link rel="stylesheet" href="styles/chatbot.css">
 </head>
 <body>
+<div class="mobile-disclaimer hidden">
+    <div class="mobile-disclaimer-content">
+        <h1 class="mobile-disclaimer-title">Note</h1>
+        <p class="mobile-disclaimer-text">
+            This website is currently <span class="mobile-disclaimer-highlight">not optimized for mobile devices</span>.
+            However, I'm working on a mobile version and will bring this experience to your phone soon!
+            <br><br>
+            Would you like to continue anyway?
+        </p>
+        <button class="mobile-disclaimer-button">Yes, Continue</button>
+    </div>
+</div>
+
 <div class="topbar">
     <div class="socials">
         <img src="imgs/eyes.gif" alt="→">
@@ -167,6 +182,7 @@
 
 <img id="floating-cat" src="imgs/cats/cat.webp" alt="" aria-hidden="true">
 
+<script src="scripts/mobile-disclaimer.js"></script>
 <script src="scripts/chatbot.js"></script>
 
 <script src="scripts/main.js"></script>
